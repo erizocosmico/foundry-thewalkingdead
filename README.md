@@ -1,6 +1,6 @@
 # The Walking Dead Universe RPG system for FoundryVTT
 
-Unofficial Foundry VTT system for AMC The Walking Dead Universe RPG by Free League.
+Unofficial Foundry VTT system for The Walking Dead Universe RPG by Free League.
 
 ### Status
 
