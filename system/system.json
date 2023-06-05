@@ -1,0 +1,31 @@
+{
+    "name": "thewalkingdead",
+    "title": "The Walking Dead Universe RPG",
+    "description": "The The Walking Dead Universe RPG system for FoundryVTT!",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "11",
+        "maximum": "11"
+    },
+    "authors": [{ "name": "Miguel Molina" }],
+    "esmodules": ["thewalkingdead.js"],
+    "styles": ["thewalkingdead.css"],
+    "scripts": [],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "gridDistance": 5,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "health.value",
+    "secondaryTokenAttribute": "stress.value",
+    "url": "https://github.com/erizocosmico/foundry-thewalkingdead",
+    "manifest": "https://github.com/erizocosmico/foundry-thewalkingdead/releases/latest/download/system.json",
+    "download": "https://github.com/erizocosmico/foundry-thewalkingdead/releases/latest/download/system.zip",
+    "license": "LICENSE"
+}

@@ -1,0 +1,139 @@
+$item-row-size: 35px;
+
+// Section Header
+.items-header {
+    height: $item-row-size;
+    padding: 0;
+    align-items: center;
+    background: $c-heading-light;
+    > * {
+        font-size: 14px;
+        text-align: center;
+    }
+    .item-name {
+        font-weight: 600;
+        text-align: left;
+        display: flex;
+    }
+}
+
+/* ----------------------------------------- */
+/*  Items Lists                              */
+/* ----------------------------------------- */
+
+.items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    // Child lists
+    .item-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Item Name
+    .item-name {
+        flex: 2;
+        margin: 0;
+        overflow: hidden;
+        font-size: 13px;
+        text-align: left;
+        align-items: center;
+        display: flex;
+        h3,
+        h4 {
+            margin: 0;
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    }
+
+    .item-expand {
+        cursor: pointer;
+    }
+
+    // Control Buttons
+    .item-controls {
+        display: flex;
+        flex: 0 0 100px;
+        justify-content: flex-end;
+        a {
+            font-size: 12px;
+            text-align: center;
+
+            & + a {
+                margin-left: 0.5rem;
+            }
+
+            &:hover {
+                text-shadow: none;
+                color: $c-maroon;
+            }
+        }
+    }
+
+    // Individual Item
+    .item {
+        align-items: center;
+        padding: 0.2rem 0.5rem; // to align with the header border
+        border-bottom: 1px solid $c-border-light;
+        height: $item-row-size;
+
+        &:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            .item-image {
+                flex: 0 0 30px;
+                height: 30px;
+                background-size: 30px;
+                border: none;
+                margin-right: 0.1rem;
+                margin-top: calc(($item-row-size - 31px) / 2);
+            }
+        }
+    }
+
+    .item-expanded {
+        padding-left: 30px;
+        background-color: $c-heading-light;
+    }
+
+    .item-prop {
+        text-align: center;
+        border-left: 1px solid #c9c7b8;
+        border-right: 1px solid #c9c7b8;
+        font-size: 12px;
+    }
+
+    // Section Header
+    .items-header {
+        height: $item-row-size;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        background: $c-heading-light;
+        border: none;
+        border-bottom: 1px solid $c-border-light;
+        font-weight: 600;
+        padding: 0 0.5rem;
+        > * {
+            font-size: 12px;
+            text-align: center;
+        }
+        .item-name {
+            padding: 0;
+            text-align: left;
+        }
+    }
+}
+
+/* Example style for TWD (can be removed if not needed) */
+.item-formula {
+    flex: 0 0 200px;
+    padding: 0 8px;
+}

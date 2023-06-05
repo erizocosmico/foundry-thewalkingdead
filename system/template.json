@@ -1,0 +1,198 @@
+{
+    "Actor": {
+        "types": ["character", "npc", "haven", "vehicle"],
+        "templates": {
+            "common": {
+                "issues": []
+            },
+            "character_base": {
+                "health": {
+                    "value": 3,
+                    "max": 3
+                },
+                "skills": {
+                    "close_combat": {
+                        "attribute": "str",
+                        "value": 0
+                    },
+                    "endure": {
+                        "attribute": "str",
+                        "value": 0
+                    },
+                    "force": {
+                        "attribute": "str",
+                        "value": 0
+                    },
+                    "mobility": {
+                        "attribute": "agi",
+                        "value": 0
+                    },
+                    "ranged_combat": {
+                        "attribute": "agi",
+                        "value": 0
+                    },
+                    "stealth": {
+                        "attribute": "agi",
+                        "value": 0
+                    },
+                    "scout": {
+                        "attribute": "wit",
+                        "value": 0
+                    },
+                    "survival": {
+                        "attribute": "wit",
+                        "value": 0
+                    },
+                    "tech": {
+                        "attribute": "wit",
+                        "value": 0
+                    },
+                    "leadership": {
+                        "attribute": "emp",
+                        "value": 0
+                    },
+                    "manipulation": {
+                        "attribute": "emp",
+                        "value": 0
+                    },
+                    "medicine": {
+                        "attribute": "emp",
+                        "value": 0
+                    }
+                },
+                "description": ""
+            }
+        },
+        "character": {
+            "templates": ["common", "character_base"],
+            "experience": {
+                "current": 0,
+                "total": 0
+            },
+            "stress": {
+                "value": 0
+            },
+            "anchors": {
+                "pc": "",
+                "npc": ""
+            },
+            "drive": {
+                "value": "",
+                "used": false
+            },
+            "archetype": "",
+            "attributes": {
+                "str": {
+                    "value": 0
+                },
+                "agi": {
+                    "value": 0
+                },
+                "wit": {
+                    "value": 0
+                },
+                "emp": {
+                    "value": 0
+                }
+            },
+            "notes": ""
+        },
+        "npc": {
+            "templates": ["common", "character_base"],
+            "attributes": {
+                "str": {
+                    "value": 4
+                },
+                "agi": {
+                    "value": 4
+                },
+                "wit": {
+                    "value": 4
+                },
+                "emp": {
+                    "value": 4
+                }
+            }
+        },
+        "vehicle": {
+            "templates": ["common"],
+            "maneuverability": 0,
+            "damage": 0,
+            "hull": 0,
+            "armor": 0,
+            "description": ""
+        },
+        "haven": {
+            "features": {
+                "capacity": 1,
+                "defense": 1
+            },
+            "description": {
+                "overall": "",
+                "structures": "",
+                "surroundings": "",
+                "food_sources": ""
+            },
+            "notes": ""
+        }
+    },
+    "Item": {
+        "types": ["injury", "gear", "weapon", "project", "talent", "armor"],
+        "templates": {
+            "base": {
+                "description": ""
+            },
+            "item": {
+                "description": "",
+                "encumbrance": 0,
+                "equipped": true,
+                "storage": ""
+            }
+        },
+        "injury": {
+            "lethal": false,
+            "time_limit": "",
+            "recovery_time": "",
+            "penalty": 0
+        },
+        "gear": {
+            "templates": ["item", "base"],
+            "bonus": {
+                "skill": "",
+                "value": 0
+            }
+        },
+        "weapon": {
+            "templates": ["item", "base"],
+            "bonus": 0,
+            "damage": 1,
+            "range": "short",
+            "type": "",
+            "bp": 0
+        },
+        "project": {
+            "templates": ["base"],
+            "effect": {
+                "property": "capacity",
+                "value": 1
+            },
+            "workforce": {
+                "required": "",
+                "value": 0
+            },
+            "time": {
+                "requirement": "",
+                "finish": ""
+            }
+        },
+        "talent": {
+            "templates": ["base"],
+            "prerequisite": "",
+            "expanded": false
+        },
+        "armor": {
+            "protection": 0,
+            "penalty": 0
+        }
+    }
+}

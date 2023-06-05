@@ -1,0 +1,51 @@
+<div class='sheet-fields'>
+    <div class='sheet-fields-group'>
+        <div class='sheet-field'>
+            <label for='anchor-pc'>{{loc 'character.pc_anchor'}}:</label>
+            <input id='anchor-pc' name='data.anchors.pc' value='{{data.anchors.pc}}' />
+        </div>
+
+        <div class='sheet-field'>
+            <label for='anchor-npc'>{{loc 'character.npc_anchor'}}:</label>
+            <input id='anchor-npc' name='data.anchors.npc' value='{{data.anchors.npc}}' />
+        </div>
+    </div>
+
+    <div class='sheet-fields-group'>
+        <div class='sheet-field long'>
+            <label>{{loc 'issues'}}:</label>
+            {{editor
+                content=data.issues
+                target='data.issues'
+                rollData=rollData
+                button=true
+                owner=owner
+                editable=editable
+            }}
+        </div>
+
+        <div class='sheet-field long'>
+            <label>{{loc 'description'}}:</label>
+            {{editor
+                content=data.description
+                target='data.description'
+                rollData=rollData
+                button=true
+                owner=owner
+                editable=editable
+            }}
+        </div>
+    </div>
+
+    <div class='sheet-field long'>
+        <label>{{loc 'notes'}}:</label>
+        {{editor
+            content=data.notes
+            target='data.notes'
+            rollData=rollData
+            button=true
+            owner=owner
+            editable=editable
+        }}
+    </div>
+</div>

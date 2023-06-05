@@ -1,0 +1,44 @@
+<div class='twd-roll roll-stat'>
+    <h3>{{label}}</h3>
+
+    <div class='twd-roll-dice'>
+        {{#each results.base as |d|}}
+            <span class='twd-dice twd-dice-base twd-dice-base-{{d}}'></span>
+        {{/each}}
+        {{#each results.stress as |d|}}
+            <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
+        {{/each}}
+    </div>
+
+    {{#if pushed}}
+        <h4>{{loc "rolls.pushed"}}</h4>
+
+        <div class='twd-roll-dice'>
+            {{#each pushResults.base as |d|}}
+                <span class='twd-dice twd-dice-base twd-dice-base-{{d}}'></span>
+            {{/each}}
+            {{#each pushResults.stress as |d|}}
+                <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if fail}}
+        <div class='twd-roll-result twd-roll-fail'>{{loc 'rolls.fail'}}</div>
+    {{/if}}
+
+    {{#if success}}
+        <div class='twd-roll-result twd-roll-success'>{{successes}}
+            {{localize successLabel}}</div>
+    {{/if}}
+
+    {{#if messedUp}}
+        <div class='twd-roll-result twd-roll-mess'>{{localize
+                'THEWALKINGDEAD.rolls.messed_up'
+            }}</div>
+    {{/if}}
+
+    {{#if canPush}}
+        <button class="twd-roll-push" {{#if pushed}}disabled="disabled"{{/if}}>{{loc "rolls.push"}}</button>
+    {{/if}}
+</div>

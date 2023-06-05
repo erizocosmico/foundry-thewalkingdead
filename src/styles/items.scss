@@ -1,0 +1,31 @@
+&.sheet.item {
+    header {
+        display: flex;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+
+        img {
+            height: 45px;
+            width: 45px;
+        }
+
+        h1 {
+            flex: 1;
+
+            input {
+                border: none;
+                display: block;
+                background-color: transparent;
+                height: 2.6rem;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+.injury-field label {
+    width: 90px;
+}

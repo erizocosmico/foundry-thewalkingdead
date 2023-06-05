@@ -1,0 +1,25 @@
+.window-app,
+.sidebar-tab {
+    font-family: $font-primary;
+}
+
+.rollable {
+    &:hover,
+    &:focus {
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+.window-app .window-content,
+.chat-message,
+#chat-form textarea,
+.sheet.journal-entry .journal-entry-content {
+    background-image: url('/systems/thewalkingdead/assets/grunge-paper.jpg');
+    background-size: cover;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $c-maroon;
+    border-color: $c-border-light;
+}

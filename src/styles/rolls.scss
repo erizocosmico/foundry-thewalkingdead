@@ -1,0 +1,105 @@
+.twd-roll {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+
+    h3 {
+        font-family: $font-grunge;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: $c-maroon;
+        border: none;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+        border-image-slice: 14 13 13 14;
+        border-image-outset: 3.1px;
+        border-image-repeat: repeat repeat;
+        border-image-source: url('/systems/thewalkingdead/assets/line.png');
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        font-family: $font-grunge;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: $c-maroon;
+        border: none;
+        text-align: center;
+    }
+
+    &-dice {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    &-result {
+        font-family: $font-grunge;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &-fail,
+    &-mess {
+        color: $c-maroon;
+    }
+
+    &-push {
+        font-family: $font-primary;
+        font-weight: 600;
+        margin-top: 1rem;
+        border-image-slice: 14 13 13 14;
+        border-image-width: 5px 5px 5px 5px;
+        border-image-outset: 3.1px;
+        border-image-repeat: repeat repeat;
+        border-image-source: url('/systems/thewalkingdead/assets/line.png');
+        background: $c-maroon;
+        color: rgba(255, 255, 255, 0.9);
+        filter: grayscale(0.5);
+
+        &:hover {
+            color: white;
+            filter: grayscale(0);
+        }
+    }
+}
+
+.twd-dice {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+
+    &-stress {
+        &-1 {
+            background-image: url('/systems/thewalkingdead/assets/dice/stress-1.png');
+        }
+
+        &-2,
+        &-3,
+        &-4,
+        &-5 {
+            background-image: url('/systems/thewalkingdead/assets/dice/stress-0.png');
+        }
+
+        &-6 {
+            background-image: url('/systems/thewalkingdead/assets/dice/stress-6.png');
+        }
+    }
+
+    &-base {
+        &-1,
+        &-2,
+        &-3,
+        &-4,
+        &-5 {
+            background-image: url('/systems/thewalkingdead/assets/dice/base-0.png');
+        }
+
+        &-6 {
+            background-image: url('/systems/thewalkingdead/assets/dice/base-6.png');
+        }
+    }
+}

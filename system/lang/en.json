@@ -1,0 +1,82 @@
+{
+    "THEWALKINGDEAD.name": "Name",
+    "THEWALKINGDEAD.add": "Add",
+    "THEWALKINGDEAD.cancel": "Cancel",
+    "THEWALKINGDEAD.attributes_and_skills": "Attributes & skills",
+    "THEWALKINGDEAD.attributes": {
+        "str": "Strength",
+        "agi": "Agility",
+        "wit": "Wits",
+        "emp": "Empathy"
+    },
+    "THEWALKINGDEAD.health": "Health",
+    "THEWALKINGDEAD.unharmed": "Unharmed",
+    "THEWALKINGDEAD.bruised": "Bruised",
+    "THEWALKINGDEAD.battered": "Battered",
+    "THEWALKINGDEAD.broken": "Broken",
+    "THEWALKINGDEAD.skills": {
+        "close_combat": "Close combat",
+        "endure": "Endure",
+        "force": "Force",
+        "mobility": "Mobility",
+        "ranged_combat": "Ranged combat",
+        "stealth": "Stealth",
+        "scout": "Scout",
+        "survival": "Survival",
+        "tech": "Tech",
+        "leadership": "Leadership",
+        "manipulation": "Manipulation",
+        "medicine": "Medicine"
+    },
+    "THEWALKINGDEAD.character": {
+        "name": "Character name",
+        "anchors": "Anchors",
+        "archetype": "Archetype",
+        "npc_anchor": "NPC Anchor",
+        "pc_anchor": "PC Anchor",
+        "drive": "Drive",
+        "stress": "Stress",
+        "experience": "Experience"
+    },
+    "THEWALKINGDEAD.rolls": {
+        "roll": "Roll",
+        "fail": "Fail",
+        "success": "Success",
+        "successes": "Successes",
+        "messed_up": "You messed up!",
+        "push": "Push roll",
+        "pushed": "Roll pushed",
+        "modifier": "Modifier",
+        "passive": "Passive roll"
+    },
+    "THEWALKINGDEAD.issues": "Issues",
+    "THEWALKINGDEAD.injuries": {
+        "add": "Add critical injury",
+        "injury": "Critical injury",
+        "edit": "Edit critical injury",
+        "delete": "Delete critical injury",
+        "no_injuries": "No critical injuries.",
+        "lethal": "Lethal",
+        "penalty": "Penalty",
+        "time_limit": "Time limit",
+        "recovery_time": "Recovery time"
+    },
+    "THEWALKINGDEAD.units": {
+        "minutes": "minutes",
+        "hours": "hours",
+        "days": "days",
+        "weeks": "weeks",
+        "months": "months"
+    },
+    "THEWALKINGDEAD.notes": "Notes",
+    "THEWALKINGDEAD.stats": "Stats",
+    "THEWALKINGDEAD.talents": "Talents",
+    "THEWALKINGDEAD.no_talents": "No talents.",
+    "THEWALKINGDEAD.talent_empty_description": "Talent has no description.",
+    "THEWALKINGDEAD.prerequisite": "Prerequisite",
+    "THEWALKINGDEAD.equipment": "Equipment",
+    "THEWALKINGDEAD.bio": "Bio",
+    "THEWALKINGDEAD.description": "Description",
+    "THEWALKINGDEAD.yes": "Yes",
+    "THEWALKINGDEAD.no": "No"
+}
