@@ -2,58 +2,71 @@
     <header>
         <img src='{{item.img}}' data-edit='img' title='{{item.name}}' />
         <h1>
-            <input
-                name='name'
-                type='text'
-                value='{{item.name}}'
-                placeholder='{{loc "name"}}'
-            />
+            <input name='name' type='text' value='{{item.name}}' placeholder='{{loc "name"}}' />
         </h1>
     </header>
     <section>
         <div class='sheet-fields'>
             <div class='sheet-fields-group'>
                 <div class='sheet-field injury-field'>
-                    <label>{{loc "injuries.lethal"}}:</label>
+                    <label>{{loc 'injuries.lethal'}}:</label>
+
                     <select data-dtype='Boolean' name='data.lethal'>
-                        <option value='false' {{#if (not data.lethal)}}selected{{/if}}>{{loc "no"}}</option>
-                        <option value='true' {{#if data.lethal}}selected{{/if}}>{{loc "yes"}}</option>
+                        <option value='false' {{isSelected (not data.lethal)}}>{{loc 'no'}}</option>
+                        <option value='true' {{isSelected data.lethal}}>{{loc 'yes'}}</option>
                     </select>
                 </div>
 
                 <div class='sheet-field injury-field'>
-                    <label>{{loc "injuries.penalty"}}:</label>
+                    <label>{{loc 'injuries.penalty'}}:</label>
                     <select data-dtype='Number' name='data.penalty'>
-                        <option value='0' {{#if (eq data.penalty 0)}}selected{{/if}}>-</option>
-                        <option value='-1' {{#if (eq data.penalty -1)}}selected{{/if}}>-1</option>
-                        <option value='-2' {{#if (eq data.penalty -2)}}selected{{/if}}>-2</option>
-                        <option value='-3' {{#if (eq data.penalty -3)}}selected{{/if}}>-3</option>
-                        <option value='-4' {{#if (eq data.penalty -4)}}selected{{/if}}>-4</option>
-                        <option value='-5' {{#if (eq data.penalty -5)}}selected{{/if}}>-5</option>
+                        <option value='0' {{isSelected (eq data.penalty 0)}}>-</option>
+                        <option value='-1' {{isSelected (eq data.penalty -1)}}>-1</option>
+                        <option value='-2' {{isSelected (eq data.penalty -2)}}>-2</option>
+                        <option value='-3' {{isSelected (eq data.penalty -3)}}>-3</option>
+                        <option value='-4' {{isSelected (eq data.penalty -4)}}>-4</option>
+                        <option value='-5' {{isSelected (eq data.penalty -5)}}>-5</option>
                     </select>
                 </div>
             </div>
 
             <div class='sheet-fields-group'>
                 <div class='sheet-field injury-field'>
-                    <label>{{loc "injuries.time_limit"}}:</label>
+                    <label>{{loc 'injuries.time_limit'}}:</label>
                     <select name='data.time_limit'>
-                        <option value='' {{#if (eq data.time_limit '')}}selected{{/if}}>-</option>
-                        <option value='minutes' {{#if (eq data.time_limit 'minutes')}}selected{{/if}}>{{loc "units.minutes"}}</option>
-                        <option value='hours' {{#if (eq data.time_limit 'hours')}}selected{{/if}}>{{loc "units.hours"}}</option>
-                        <option value='days' {{#if (eq data.time_limit 'days')}}selected{{/if}}>{{loc "units.days"}}</option>
+                        <option value='' {{isSelected (eq data.time_limit '')}}>-</option>
+                        <option value='minutes' {{isSelected (eq data.time_limit 'minutes')}}>{{loc
+                                'units.minutes'
+                            }}</option>
+                        <option value='hours' {{isSelected (eq data.time_limit 'hours')}}>{{loc
+                                'units.hours'
+                            }}</option>
+                        <option value='days' {{isSelected (eq data.time_limit 'days')}}>{{loc
+                                'units.days'
+                            }}</option>
                     </select>
                 </div>
 
                 <div class='sheet-field injury-field'>
-                    <label>{{loc "injuries.recovery_time"}}:</label>
+                    <label>{{loc 'injuries.recovery_time'}}:</label>
                     <select name='data.recovery_time'>
-                        <option value='' {{#if (eq data.recovery_time '')}}selected{{/if}}>-</option>
-                        <option value='minutes' {{#if (eq data.recovery_time 'minutes')}}selected{{/if}}>{{loc "units.minutes"}}</option>
-                        <option value='hours' {{#if (eq data.recovery_time 'hours')}}selected{{/if}}>{{loc "units.hours"}}</option>
-                        <option value='days' {{#if (eq data.recovery_time 'days')}}selected{{/if}}>{{loc "units.days"}}</option>
-                        <option value='weeks' {{#if (eq data.recovery_time 'weeks')}}selected{{/if}}>{{loc "units.weeks"}}</option>
-                        <option value='months' {{#if (eq data.recovery_time 'months')}}selected{{/if}}>{{loc "units.months"}}</option>
+                        <option value='' {{isSelected (eq data.recovery_time '')}}>-</option>
+                        <option
+                            value='minutes'
+                            {{isSelected (eq data.recovery_time 'minutes')}}
+                        >{{loc 'units.minutes'}}</option>
+                        <option value='hours' {{isSelected (eq data.recovery_time 'hours')}}>{{loc
+                                'units.hours'
+                            }}</option>
+                        <option value='days' {{isSelected (eq data.recovery_time 'days')}}>{{loc
+                                'units.days'
+                            }}</option>
+                        <option value='weeks' {{isSelected (eq data.recovery_time 'weeks')}}>{{loc
+                                'units.weeks'
+                            }}</option>
+                        <option value='months' {{isSelected (eq data.recovery_time 'months')}}>{{loc
+                                'units.months'
+                            }}</option>
                     </select>
                 </div>
             </div>

@@ -101,6 +101,7 @@ export class TWDActorSheet extends ActorSheet {
 
         for (let i of context.items) {
             i.img = i.img || DEFAULT_TOKEN;
+            console.log(i);
             switch (i.type) {
                 case 'injury':
                     context.injuries.push(i);
@@ -108,7 +109,7 @@ export class TWDActorSheet extends ActorSheet {
                 case 'gear':
                 case 'weapon':
                 case 'armor':
-                    if (!i.data.data.equipped) context.storedGear.push(i);
+                    if (!i.data.equipped) context.storedGear.push(i);
                     else if (i.type === 'gear') context.gear.push(i);
                     else if (i.type === 'weapon') context.weapons.push(i);
                     else if (i.type === 'armor') context.armor.push(i);
@@ -117,6 +118,8 @@ export class TWDActorSheet extends ActorSheet {
                     context.talents.push(i);
             }
         }
+
+        console.log(context.armor);
     }
 
     /* -------------------------------------------- */

@@ -28,8 +28,9 @@ export function registerHelpers() {
         return range;
     });
 
-    Handlebars.registerHelper('loc', function (key) {
-        return game.i18n.localize(`THEWALKINGDEAD.${key}`);
+    Handlebars.registerHelper('loc', function (...args) {
+        args.pop();
+        return game.i18n.localize(`THEWALKINGDEAD.${args.join('.')}`);
     });
 
     Handlebars.registerHelper({

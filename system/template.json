@@ -1,9 +1,9 @@
 {
     "Actor": {
-        "types": ["character", "npc", "haven", "vehicle"],
+        "types": ["character"],
         "templates": {
             "common": {
-                "issues": []
+                "issues": ""
             },
             "character_base": {
                 "health": {
@@ -123,6 +123,7 @@
             "description": ""
         },
         "haven": {
+            "templates": ["common"],
             "features": {
                 "capacity": 1,
                 "defense": 1
@@ -137,7 +138,7 @@
         }
     },
     "Item": {
-        "types": ["injury", "gear", "weapon", "project", "talent", "armor"],
+        "types": ["injury", "gear", "weapon", "talent", "armor"],
         "templates": {
             "base": {
                 "description": ""
@@ -146,7 +147,8 @@
                 "description": "",
                 "encumbrance": 0,
                 "equipped": true,
-                "storage": ""
+                "storage": "",
+                "bonus": 0
             }
         },
         "injury": {
@@ -157,17 +159,14 @@
         },
         "gear": {
             "templates": ["item", "base"],
-            "bonus": {
-                "skill": "",
-                "value": 0
-            }
+            "skill": ""
         },
         "weapon": {
             "templates": ["item", "base"],
-            "bonus": 0,
             "damage": 1,
             "range": "short",
-            "type": "",
+            "ranged": false,
+            "explosive": false,
             "bp": 0
         },
         "project": {
@@ -191,8 +190,11 @@
             "expanded": false
         },
         "armor": {
+            "templates": ["base"],
             "protection": 0,
-            "penalty": 0
+            "penalty": 0,
+            "equipped": true,
+            "storage": ""
         }
     }
 }

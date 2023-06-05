@@ -2,6 +2,10 @@
     "THEWALKINGDEAD.name": "Name",
     "THEWALKINGDEAD.add": "Add",
     "THEWALKINGDEAD.cancel": "Cancel",
+    "THEWALKINGDEAD.edit": "Edit",
+    "THEWALKINGDEAD.delete": "Delete",
+    "THEWALKINGDEAD.yes": "Yes",
+    "THEWALKINGDEAD.no": "No",
     "THEWALKINGDEAD.attributes_and_skills": "Attributes & skills",
     "THEWALKINGDEAD.attributes": {
         "str": "Strength",
@@ -70,13 +74,37 @@
     },
     "THEWALKINGDEAD.notes": "Notes",
     "THEWALKINGDEAD.stats": "Stats",
-    "THEWALKINGDEAD.talents": "Talents",
-    "THEWALKINGDEAD.no_talents": "No talents.",
-    "THEWALKINGDEAD.talent_empty_description": "Talent has no description.",
-    "THEWALKINGDEAD.prerequisite": "Prerequisite",
-    "THEWALKINGDEAD.equipment": "Equipment",
-    "THEWALKINGDEAD.bio": "Bio",
-    "THEWALKINGDEAD.description": "Description",
-    "THEWALKINGDEAD.yes": "Yes",
-    "THEWALKINGDEAD.no": "No"
+    "THEWALKINGDEAD.talents": {
+        "tab": "Talents",
+        "empty": "No talents.",
+        "empty_description": "Talent has no description.",
+        "prerequisite": "Prerequisite"
+    },
+    "THEWALKINGDEAD.equipment": {
+        "tab": "Equipment",
+        "weapons": "Weapons",
+        "weapon": "Weapon",
+        "bonus": "Bonus",
+        "damage": "Damage",
+        "range": "Range",
+        "encumbrance": "Encumbrance",
+        "armor": "Armor",
+        "armors": "Armors",
+        "gear": "Gear",
+        "item": "Item",
+        "stored": "Stored gear",
+        "armor_penalty": "Penalty",
+        "armor_level": "Armor level",
+        "no_weapons": "No weapons.",
+        "no_armors": "No armors.",
+        "no_gear": "No gear.",
+        "ranges": {
+            "close": "Close",
+            "short": "Short",
+            "long": "Long",
+            "extreme": "Extreme"
+        }
+    },
+    "THEWALKINGDEAD.bio": "Biography",
+    "THEWALKINGDEAD.description": "Description"
 }

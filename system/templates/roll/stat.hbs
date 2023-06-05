@@ -11,7 +11,7 @@
     </div>
 
     {{#if pushed}}
-        <h4>{{loc "rolls.pushed"}}</h4>
+        <h4>{{loc 'rolls.pushed'}}</h4>
 
         <div class='twd-roll-dice'>
             {{#each pushResults.base as |d|}}
@@ -39,6 +39,6 @@
     {{/if}}
 
     {{#if canPush}}
-        <button class="twd-roll-push" {{#if pushed}}disabled="disabled"{{/if}}>{{loc "rolls.push"}}</button>
+        <button class='twd-roll-push'>{{loc 'rolls.push'}}</button>
     {{/if}}
 </div>

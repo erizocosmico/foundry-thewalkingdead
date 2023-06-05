@@ -105,9 +105,6 @@ $item-row-size: 35px;
 
     .item-prop {
         text-align: center;
-        border-left: 1px solid #c9c7b8;
-        border-right: 1px solid #c9c7b8;
-        font-size: 12px;
     }
 
     // Section Header
@@ -132,8 +129,26 @@ $item-row-size: 35px;
     }
 }
 
-/* Example style for TWD (can be removed if not needed) */
-.item-formula {
-    flex: 0 0 200px;
-    padding: 0 8px;
+.item-bonus {
+    flex: 0 0 60px;
+
+    &-gear {
+        flex: 0 0 250px;
+    }
+}
+
+.item-damage {
+    flex: 0 0 70px;
+}
+
+.item-range {
+    flex: 0 0 120px;
+}
+
+.item-encumbrance {
+    flex: 0 0 80px;
+}
+
+.item-equipped {
+    color: $c-maroon;
 }

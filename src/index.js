@@ -36,7 +36,9 @@ Hooks.once('init', async function () {
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet('thewalkingdead', TWDActorSheet, { makeDefault: true });
     Items.unregisterSheet('core', ItemSheet);
-    Items.registerSheet('thewalkingdead', TWDBaseItemSheet, { makeDefault: true });
+    Items.registerSheet('thewalkingdead', TWDBaseItemSheet, {
+        makeDefault: true,
+    });
     Items.registerSheet('thewalkingdead', TWDInjuryItemSheet, {
         types: ['injury'],
         makeDefault: true,
