@@ -8,20 +8,20 @@
     <section>
         <div class='sheet-fields'>
             <div class='sheet-field'>
-                <label for='prerequisite'>{{loc 'prerequisite'}}:</label>
+                <label for='prerequisite'>{{loc 'talents.prerequisite'}}:</label>
                 <input
                     id='prerequisite'
                     type='text'
-                    name='data.prerequisite'
-                    value='{{data.prerequisite}}'
+                    name='system.prerequisite'
+                    value='{{system.prerequisite}}'
                 />
             </div>
 
             <div class='sheet-field long'>
                 <label>{{loc 'description'}}:</label>
                 {{editor
-                    content=data.description
-                    target='data.description'
+                    content=system.description
+                    target='system.description'
                     rollData=rollData
                     button=true
                     owner=owner

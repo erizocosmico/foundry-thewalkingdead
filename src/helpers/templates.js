@@ -33,6 +33,10 @@ export function registerHelpers() {
         return game.i18n.localize(`THEWALKINGDEAD.${args.join('.')}`);
     });
 
+    Handlebars.registerHelper('cond', function (cond, result) {
+        return cond ? result : '';
+    });
+
     Handlebars.registerHelper({
         eq: (v1, v2) => v1 === v2,
         ne: (v1, v2) => v1 !== v2,
@@ -46,5 +50,6 @@ export function registerHelpers() {
         or() {
             return Array.prototype.slice.call(arguments, 0, -1).some(Boolean);
         },
+        isSelected: (cond) => (cond ? 'selected' : ''),
     });
 }

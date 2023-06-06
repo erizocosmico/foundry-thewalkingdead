@@ -1,5 +1,5 @@
 import { labelFor } from '../helpers/i18n';
-import { rollStat, rollStatDialog } from '../rolls/roll';
+import { rollStatDialog } from '../rolls/roll';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -51,21 +51,17 @@ export class TWDActorSheet extends ActorSheet {
         // editable, the items array, and the effects array.
         const context = super.getData();
 
-        // Use a safe clone of the actor data for further operations.
-        const actorData = this.actor.data.toObject(false);
-
-        // Add the actor's data to context.data for easier access, as well as flags.
-        context.data = actorData.data;
-        context.flags = actorData.flags;
+        context.system = context.actor.system;
+        context.flags = context.actor.flags;
 
         // Prepare character data and items.
-        if (actorData.type == 'character') {
+        if (this.actor.type == 'character') {
             this._prepareItems(context);
             this._prepareCharacterData(context);
         }
 
         // Prepare NPC data and items.
-        if (actorData.type == 'npc') {
+        if (this.actor.type == 'npc') {
             this._prepareItems(context);
         }
 
@@ -101,7 +97,6 @@ export class TWDActorSheet extends ActorSheet {
 
         for (let i of context.items) {
             i.img = i.img || DEFAULT_TOKEN;
-            console.log(i);
             switch (i.type) {
                 case 'injury':
                     context.injuries.push(i);
@@ -118,8 +113,6 @@ export class TWDActorSheet extends ActorSheet {
                     context.talents.push(i);
             }
         }
-
-        console.log(context.armor);
     }
 
     /* -------------------------------------------- */
@@ -144,7 +137,7 @@ export class TWDActorSheet extends ActorSheet {
         html.find('.item-expand').click((e) => {
             const li = $(e.currentTarget).parents('.item');
             const item = this.actor.items.get(li.data('itemId'));
-            item.update({ 'data.expanded': !item.data.data.expanded });
+            item.update({ 'system.expanded': !item.system.expanded });
         });
 
         // -------------------------------------------------------------
@@ -176,10 +169,19 @@ export class TWDActorSheet extends ActorSheet {
         }
     }
 
-    get penalties() {
-        return this.actor.items
-            .filter((i) => i.type === 'injury')
-            .reduce((acc, i) => acc + i.data.data.penalty, 0);
+    penalties(stat) {
+        let armorPenalty = 0;
+        if (stat === 'mobility') {
+            armorPenalty = this.actor.items
+                .filter((i) => i.type === 'armor' && i.system.equipped)
+                .reduce((acc, i) => acc + i.system.penalty, 0);
+        }
+
+        return (
+            this.actor.items
+                .filter((i) => i.type === 'injury')
+                .reduce((acc, i) => acc + i.system.penalty, 0) + armorPenalty
+        );
     }
 
     async _setTrackBoxValue(e) {
@@ -188,7 +190,7 @@ export class TWDActorSheet extends ActorSheet {
         const key = e.target.dataset.key;
         let n = Number(e.target.dataset.value);
         const prop = getProperty(this.actor.data, key);
-        if (n === 1 && prop > 0 && key !== 'data.health.value') {
+        if (n === 1 && prop > 0 && key !== 'system.health.value') {
             n = 0;
         }
 
@@ -196,18 +198,18 @@ export class TWDActorSheet extends ActorSheet {
     }
 
     async _toggleDrive() {
-        await this.actor.update({ 'data.drive.used': !this.actor.data.data.drive.used });
+        await this.actor.update({ 'system.drive.used': !this.actor.system.drive.used });
     }
 
     async _rollAttribute(e) {
         e.preventDefault();
         const attr = e.target.dataset.attr;
-        const data = this.actor.data.data;
+        const data = this.actor.system;
         await rollStatDialog({
             actor: this.actor,
             pool: data.attributes[attr].value,
             stress: data.stress?.value || 0,
-            penalties: this.penalties,
+            penalties: this.penalties(attr),
             label: game.i18n.localize(labelFor('attributes', attr)),
         });
     }
@@ -215,12 +217,12 @@ export class TWDActorSheet extends ActorSheet {
     async _rollSkill(e) {
         e.preventDefault();
         const skill = e.target.dataset.skill;
-        const data = this.actor.data.data;
+        const data = this.actor.system;
         await rollStatDialog({
             actor: this.actor,
             pool: data.skills[skill].value + data.attributes[data.skills[skill].attribute].value,
             stress: data.stress?.value || 0,
-            penalties: this.penalties,
+            penalties: this.penalties(skill),
             label: game.i18n.localize(labelFor('skills', skill)),
         });
     }

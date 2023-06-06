@@ -19,20 +19,20 @@
                     <input
                         id='archetype'
                         type='text'
-                        name='data.archetype'
-                        value='{{data.archetype}}'
+                        name='system.archetype'
+                        value='{{system.archetype}}'
                     />
                 </div>
 
                 <div class='sheet-field'>
                     <label for='experience'>{{loc 'character.experience'}}:</label>
                     <div class='char-box-track'>
-                        {{#with data.experience as |exp|}}
+                        {{#with system.experience as |exp|}}
                             {{#each (range 1 10) as |n|}}
                                 <div
-                                    class='char-box {{if (gte exp.current n) "active"}}'
+                                    class='char-box {{cond (gte exp.current n) "active"}}'
                                     data-value='{{n}}'
-                                    data-key='data.experience.current'
+                                    data-key='system.experience.current'
                                 ></div>
                             {{/each}}
                         {{/with}}
@@ -44,10 +44,10 @@
                 <input
                     type='text'
                     id='drive'
-                    name='data.drive.value'
-                    value='{{data.drive.value}}'
+                    name='system.drive.value'
+                    value='{{system.drive.value}}'
                 />
-                <div class='drive-check char-box {{if data.drive.used "active"}}'></div>
+                <div class='drive-check char-box {{cond system.drive.used "active"}}'></div>
             </div>
         </div>
     </header>

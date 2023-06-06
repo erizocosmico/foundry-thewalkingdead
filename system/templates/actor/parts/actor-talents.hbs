@@ -30,10 +30,10 @@
                             ></i></a>
                     </div>
                 </li>
-                {{#if item.data.expanded}}
+                {{#if item.system.expanded}}
                     <li class='item flexrow item-expanded'>
-                        {{#if item.data.description}}
-                            {{{item.data.description}}}
+                        {{#if item.system.description}}
+                            {{{item.system.description}}}
                         {{else}}
                             {{loc 'talents.empty_description'}}
                         {{/if}}

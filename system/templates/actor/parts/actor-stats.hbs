@@ -1,7 +1,7 @@
 <div class='sheet-section'>
     <header><div>{{loc 'attributes_and_skills'}}</div></header>
     <div class='grid grid-4col char-stats sheet-section-content'>
-        {{#each data.stats as |attr|}}
+        {{#each system.stats as |attr|}}
             <ul class='char-stats-col'>
                 <li class='char-stat char-stat-attr'>
                     <label data-attr='{{attr.key}}' class='roll-attr'>{{localize
@@ -9,7 +9,7 @@
                         }}</label>
                     <input
                         type='number'
-                        name='data.attributes.{{attr.key}}.value'
+                        name='system.attributes.{{attr.key}}.value'
                         data-dtype='Number'
                         value='{{attr.value}}'
                     />
@@ -21,7 +21,7 @@
                             }}</label>
                         <input
                             type='number'
-                            name='data.skills.{{skill.key}}.value'
+                            name='system.skills.{{skill.key}}.value'
                             data-dtype='Number'
                             value='{{skill.value}}'
                         />
@@ -38,12 +38,12 @@
         <div class='sheet-stress'>
             <label for='stress'>{{loc 'character.stress'}}</label>
             <div class='char-box-track'>
-                {{#with data.stress as |stress|}}
+                {{#with system.stress as |stress|}}
                     {{#each (range 1 5) as |n|}}
                         <div
-                            class='char-box {{if (gte stress.value n) "active"}}'
+                            class='char-box {{cond (gte stress.value n) "active"}}'
                             data-value='{{n}}'
-                            data-key='data.stress.value'
+                            data-key='system.stress.value'
                         ></div>
                     {{/each}}
                 {{/with}}
@@ -55,33 +55,33 @@
             <li class='char-stat'>
                 <label>3. {{loc 'unharmed'}}</label>
                 <div
-                    class='char-box {{if (eq 3 data.health.value) "active"}}'
+                    class='char-box {{cond (eq 3 system.health.value) "active"}}'
                     data-value='3'
-                    data-key='data.health.value'
+                    data-key='system.health.value'
                 ></div>
             </li>
             <li class='char-stat'>
                 <label>2. {{loc 'bruised'}}</label>
                 <div
-                    class='char-box {{if (eq 2 data.health.value) "active"}}'
+                    class='char-box {{cond (eq 2 system.health.value) "active"}}'
                     data-value='2'
-                    data-key='data.health.value'
+                    data-key='system.health.value'
                 ></div>
             </li>
             <li class='char-stat'>
                 <label>1. {{loc 'battered'}}</label>
                 <div
-                    class='char-box {{if (eq 1 data.health.value) "active"}}'
+                    class='char-box {{cond (eq 1 system.health.value) "active"}}'
                     data-value='1'
-                    data-key='data.health.value'
+                    data-key='system.health.value'
                 ></div>
             </li>
             <li class='char-stat'>
                 <label>0. {{loc 'broken'}}</label>
                 <div
-                    class='char-box {{if (eq 0 data.health.value) "active"}}'
+                    class='char-box {{cond (eq 0 system.health.value) "active"}}'
                     data-value='0'
-                    data-key='data.health.value'
+                    data-key='system.health.value'
                 ></div>
             </li>
         </ul>

@@ -11,21 +11,23 @@
                 <div class='sheet-field injury-field'>
                     <label>{{loc 'injuries.lethal'}}:</label>
 
-                    <select data-dtype='Boolean' name='data.lethal'>
-                        <option value='false' {{isSelected (not data.lethal)}}>{{loc 'no'}}</option>
-                        <option value='true' {{isSelected data.lethal}}>{{loc 'yes'}}</option>
+                    <select data-dtype='Boolean' name='system.lethal'>
+                        <option value='false' {{isSelected (not system.lethal)}}>{{loc
+                                'no'
+                            }}</option>
+                        <option value='true' {{isSelected system.lethal}}>{{loc 'yes'}}</option>
                     </select>
                 </div>
 
                 <div class='sheet-field injury-field'>
                     <label>{{loc 'injuries.penalty'}}:</label>
-                    <select data-dtype='Number' name='data.penalty'>
-                        <option value='0' {{isSelected (eq data.penalty 0)}}>-</option>
-                        <option value='-1' {{isSelected (eq data.penalty -1)}}>-1</option>
-                        <option value='-2' {{isSelected (eq data.penalty -2)}}>-2</option>
-                        <option value='-3' {{isSelected (eq data.penalty -3)}}>-3</option>
-                        <option value='-4' {{isSelected (eq data.penalty -4)}}>-4</option>
-                        <option value='-5' {{isSelected (eq data.penalty -5)}}>-5</option>
+                    <select data-dtype='Number' name='system.penalty'>
+                        <option value='0' {{isSelected (eq system.penalty 0)}}>-</option>
+                        <option value='-1' {{isSelected (eq system.penalty -1)}}>-1</option>
+                        <option value='-2' {{isSelected (eq system.penalty -2)}}>-2</option>
+                        <option value='-3' {{isSelected (eq system.penalty -3)}}>-3</option>
+                        <option value='-4' {{isSelected (eq system.penalty -4)}}>-4</option>
+                        <option value='-5' {{isSelected (eq system.penalty -5)}}>-5</option>
                     </select>
                 </div>
             </div>
@@ -33,15 +35,16 @@
             <div class='sheet-fields-group'>
                 <div class='sheet-field injury-field'>
                     <label>{{loc 'injuries.time_limit'}}:</label>
-                    <select name='data.time_limit'>
-                        <option value='' {{isSelected (eq data.time_limit '')}}>-</option>
-                        <option value='minutes' {{isSelected (eq data.time_limit 'minutes')}}>{{loc
-                                'units.minutes'
-                            }}</option>
-                        <option value='hours' {{isSelected (eq data.time_limit 'hours')}}>{{loc
+                    <select name='system.time_limit'>
+                        <option value='' {{isSelected (eq system.time_limit '')}}>-</option>
+                        <option
+                            value='minutes'
+                            {{isSelected (eq system.time_limit 'minutes')}}
+                        >{{loc 'units.minutes'}}</option>
+                        <option value='hours' {{isSelected (eq system.time_limit 'hours')}}>{{loc
                                 'units.hours'
                             }}</option>
-                        <option value='days' {{isSelected (eq data.time_limit 'days')}}>{{loc
+                        <option value='days' {{isSelected (eq system.time_limit 'days')}}>{{loc
                                 'units.days'
                             }}</option>
                     </select>
@@ -49,24 +52,25 @@
 
                 <div class='sheet-field injury-field'>
                     <label>{{loc 'injuries.recovery_time'}}:</label>
-                    <select name='data.recovery_time'>
-                        <option value='' {{isSelected (eq data.recovery_time '')}}>-</option>
+                    <select name='system.recovery_time'>
+                        <option value='' {{isSelected (eq system.recovery_time '')}}>-</option>
                         <option
                             value='minutes'
-                            {{isSelected (eq data.recovery_time 'minutes')}}
+                            {{isSelected (eq system.recovery_time 'minutes')}}
                         >{{loc 'units.minutes'}}</option>
-                        <option value='hours' {{isSelected (eq data.recovery_time 'hours')}}>{{loc
+                        <option value='hours' {{isSelected (eq system.recovery_time 'hours')}}>{{loc
                                 'units.hours'
                             }}</option>
-                        <option value='days' {{isSelected (eq data.recovery_time 'days')}}>{{loc
+                        <option value='days' {{isSelected (eq system.recovery_time 'days')}}>{{loc
                                 'units.days'
                             }}</option>
-                        <option value='weeks' {{isSelected (eq data.recovery_time 'weeks')}}>{{loc
+                        <option value='weeks' {{isSelected (eq system.recovery_time 'weeks')}}>{{loc
                                 'units.weeks'
                             }}</option>
-                        <option value='months' {{isSelected (eq data.recovery_time 'months')}}>{{loc
-                                'units.months'
-                            }}</option>
+                        <option
+                            value='months'
+                            {{isSelected (eq system.recovery_time 'months')}}
+                        >{{loc 'units.months'}}</option>
                     </select>
                 </div>
             </div>

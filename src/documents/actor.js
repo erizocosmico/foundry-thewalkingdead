@@ -29,7 +29,7 @@ export class TWDActor extends Actor {
 
     _prepareStats(actorData) {
         if (actorData.type !== 'character' && actorData.type !== 'npc') return;
-        const data = actorData.data;
+        const data = actorData.system;
 
         const skills = Object.keys(data.skills).map((k) => ({
             ...data.skills[k],

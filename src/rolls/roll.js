@@ -134,8 +134,8 @@ export async function handleRollPush(message, html) {
         const actor = game.actors.get(message.speaker.actor);
         if (!actor) return;
 
-        if (actor.type === 'character' && actor.data.data.stress.value < 5) {
-            actor.update({ 'data.stress.value': actor.data.data.stress.value + 1 });
+        if (actor.type === 'character' && actor.system.stress.value < 5) {
+            actor.update({ 'system.stress.value': actor.system.stress.value + 1 });
         }
         const label = html.find('h3').text();
         await rerollStat(message, message.rolls[0], label);
