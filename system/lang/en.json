@@ -18,6 +18,7 @@
     "THEWALKINGDEAD.bruised": "Bruised",
     "THEWALKINGDEAD.battered": "Battered",
     "THEWALKINGDEAD.broken": "Broken",
+    "THEWALKINGDEAD.skill": "Skill",
     "THEWALKINGDEAD.skills": {
         "close_combat": "Close combat",
         "endure": "Endure",
@@ -88,6 +89,8 @@
         "damage": "Damage",
         "range": "Range",
         "encumbrance": "Encumbrance",
+        "explosive": "Explosive",
+        "ranged": "Ranged",
         "armor": "Armor",
         "armors": "Armors",
         "gear": "Gear",
@@ -98,6 +101,9 @@
         "no_weapons": "No weapons.",
         "no_armors": "No armors.",
         "no_gear": "No gear.",
+        "storage": "Storage",
+        "bp": "BP",
+        "blast_power": "Blast power",
         "ranges": {
             "close": "Close",
             "short": "Short",
@@ -106,5 +112,9 @@
         }
     },
     "THEWALKINGDEAD.bio": "Biography",
-    "THEWALKINGDEAD.description": "Description"
+    "THEWALKINGDEAD.description": "Description",
+    "THEWALKINGDEAD.errors": {
+        "gear_no_skill": "This gear has no selected skill and cannot be rolled!",
+        "item_no_actor": "This item does not belong to any actor!"
+    }
 }

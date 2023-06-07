@@ -13,6 +13,7 @@ export const preloadHandlebarsTemplates = async function () {
 
         // Rolls
         'systems/thewalkingdead/templates/roll/stat.hbs',
+        'systems/thewalkingdead/templates/roll/item.hbs',
 
         // Dialogs
         'systems/thewalkingdead/templates/dialogs/roll.hbs',
@@ -35,6 +36,10 @@ export function registerHelpers() {
 
     Handlebars.registerHelper('cond', function (cond, result) {
         return cond ? result : '';
+    });
+
+    Handlebars.registerHelper('capitalize', function (value) {
+        return typeof value === 'string' ? value.capitalize() : value;
     });
 
     Handlebars.registerHelper({

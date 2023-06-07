@@ -1,3 +1,5 @@
+import { localize } from '../helpers/i18n';
+
 /**
  * Extend the basic Item with some very simple modifications.
  * @extends {Item}
@@ -22,43 +24,41 @@ export class TWDItem extends Item {
         return rollData;
     }
 
-    /**
-     * Handle clickable rolls.
-     * @param {Event} event   The originating click event
-     * @private
-     */
-    async roll() {
-        const item = this.data;
-
-        // Initialize chat data.
+    async show() {
         const speaker = ChatMessage.getSpeaker({ actor: this.actor });
         const rollMode = game.settings.get('core', 'rollMode');
-        const label = `[${item.type}] ${item.name}`;
 
-        // If there's no roll data, send a chat message.
-        if (!this.system.formula) {
-            ChatMessage.create({
-                speaker: speaker,
-                rollMode: rollMode,
-                flavor: label,
-                content: item.data.description ?? '',
-            });
-        }
-        // Otherwise, create a roll and send a chat message from it.
-        else {
-            // Retrieve roll data.
-            const rollData = this.getRollData();
+        const content = await renderTemplate(
+            'systems/thewalkingdead/templates/roll/item.hbs',
+            this,
+        );
 
-            // Invoke the roll and submit it to chat.
-            const roll = new Roll(rollData.item.formula, rollData);
-            // If you need to store the value first, uncomment the next line.
-            // let result = await roll.roll({async: true});
-            roll.toMessage({
-                speaker: speaker,
-                rollMode: rollMode,
-                flavor: label,
-            });
-            return roll;
+        return await ChatMessage.create({
+            speaker: speaker,
+            rollMode: rollMode,
+            content,
+        });
+    }
+
+    async roll() {
+        if (!this.actor) {
+            return ui.notifications.error(localize('errors', 'item_no_actor'));
         }
+        switch (this.type) {
+            case 'gear':
+                return await this._rollGear();
+            case 'weapon':
+            case 'armor':
+            default:
+                return await this.show();
+        }
+    }
+
+    async _rollGear() {
+        if (!this.system.skill) {
+            return ui.notifications.error(localize('errors', 'gear_no_skill'));
+        }
+
+        await this.actor.rollSkill(this.system.skill, this.system.bonus);
     }
 }

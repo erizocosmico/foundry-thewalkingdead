@@ -1,0 +1,57 @@
+<form class='{{cssClass}}' autocomplete='off'>
+    <header>
+        <img src='{{item.img}}' data-edit='img' title='{{item.name}}' />
+        <h1>
+            <input name='name' type='text' value='{{item.name}}' placeholder='{{loc "name"}}' />
+        </h1>
+    </header>
+    <section>
+        <div class='twd-fields'>
+            <div class='twd-field gear-field'>
+                <label>{{loc 'skill'}}</label>
+                <select name='system.skill'>
+                    {{selectOptions skills selected=system.skill}}
+                </select>
+            </div>
+
+            <div class='twd-field gear-field'>
+                <label>{{loc 'equipment.bonus'}}</label>
+                <select data-dtype='Number' name='system.bonus'>
+                    <option value='0' {{isSelected (eq system.bonus 0)}}>-</option>
+                    <option value='1' {{isSelected (eq system.bonus 1)}}>1</option>
+                    <option value='2' {{isSelected (eq system.bonus 2)}}>2</option>
+                    <option value='3' {{isSelected (eq system.bonus 3)}}>3</option>
+                    <option value='4' {{isSelected (eq system.bonus 4)}}>4</option>
+                    <option value='5' {{isSelected (eq system.bonus 5)}}>5</option>
+                </select>
+            </div>
+
+            <div class='twd-field gear-field'>
+                <label>{{loc 'equipment.encumbrance'}}</label>
+                <select data-dtype='Number' name='system.encumbrance'>
+                    <option value='0' {{isSelected (eq system.encumbrance 0)}}>-</option>
+                    <option value='0.5' {{isSelected (eq system.encumbrance 0.5)}}>1/2</option>
+                    <option value='1' {{isSelected (eq system.encumbrance 1)}}>1</option>
+                    <option value='2' {{isSelected (eq system.encumbrance 2)}}>2</option>
+                </select>
+            </div>
+
+            <div class='twd-field gear-field'>
+                <label for='gear-storage'>{{loc 'equipment.storage'}}</label>
+                <input id='gear-storage' name='system.storage' value='{{system.storage}}' />
+            </div>
+
+            <div class='twd-field long'>
+                <label>{{loc 'description'}}</label>
+                {{editor
+                    content=system.description
+                    target='system.description'
+                    rollData=rollData
+                    button=true
+                    owner=owner
+                    editable=editable
+                }}
+            </div>
+        </div>
+    </section>
+</form>

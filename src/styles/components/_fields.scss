@@ -1,0 +1,97 @@
+.twd-fields {
+    border: 1px solid $c-border;
+
+    &-group {
+        display: flex;
+        align-items: center;
+
+        .twd-field + .twd-field {
+            border-left: 1px solid $c-border;
+            border-top: none;
+        }
+
+        & + .twd-fields-group,
+        & + .twd-field {
+            border-top: 1px solid $c-border;
+        }
+    }
+}
+
+.twd-field {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.2rem 0.5rem;
+    flex: 1;
+
+    &.long {
+        display: block;
+        padding: 0;
+
+        label {
+            display: block;
+            border-bottom: 1px solid $c-border-light;
+            padding: 0.2rem 0.5rem;
+        }
+
+        .editor {
+            height: 250px;
+
+            &-content {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+
+    & + .twd-field,
+    & + .twd-fields-group {
+        border-top: 1px solid $c-border;
+    }
+
+    label {
+        font-weight: 500;
+        font-size: 0.8rem;
+    }
+
+    &-value {
+        line-height: 1.6rem;
+        font-family: $font-handwrite;
+        font-size: 1.3rem;
+    }
+
+    input,
+    .editor-content {
+        flex: 1;
+        border: none;
+        background-color: transparent;
+        font-family: $font-handwrite;
+        font-size: 1.4rem;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    p {
+        padding: 0 0.5rem;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    select {
+        flex: 1;
+        border: 1px solid $c-border-light;
+        border-radius: 0;
+    }
+}
+
+.injury-field label {
+    width: 90px;
+}
+
+.gear-field,
+.weapon-field,
+.armor-field {
+    label {
+        width: 100px;
+    }
+}

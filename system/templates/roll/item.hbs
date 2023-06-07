@@ -1,0 +1,168 @@
+<div class='twd-roll roll-item'>
+    <h3>
+        <img src='{{img}}' alt='{{name}}' />
+        <span>{{name}}</span>
+    </h3>
+
+    {{#if (eq type 'injury')}}
+        <div class='twd-fields'>
+            <div class='twd-field injury-field'>
+                <label>{{loc 'injuries.lethal'}}</label>
+                <span class='twd-field-value'>{{ifThen system.lethal (loc 'yes') (loc 'no')}}</span>
+            </div>
+
+            <div class='twd-field injury-field'>
+                <label>{{loc 'injuries.penalty'}}</label>
+                <span class='twd-field-value'>{{ifThen
+                        (eq system.penalty 0)
+                        '-'
+                        system.penalty
+                    }}</span>
+            </div>
+
+            <div class='twd-field injury-field'>
+                <label>{{loc 'injuries.time_limit'}}</label>
+                <span class='twd-field-value'>{{ifThen
+                        system.time_limit
+                        (capitalize system.time_limit)
+                        '-'
+                    }}</span>
+            </div>
+
+            <div class='twd-field injury-field'>
+                <label>{{loc 'injuries.recovery_time'}}</label>
+                <span class='twd-field-value'>{{ifThen
+                        system.recovery_time
+                        (capitalize system.recovery_time)
+                        '-'
+                    }}</span>
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if (eq type 'talent')}}
+        <div class='twd-fields'>
+            {{#if system.prerequisite}}
+                <div class='twd-field'>
+                    <label>{{loc 'talents.prerequisite'}}</label>
+                    <span class='twd-field-value'>{{system.prerequisite}}</span>
+                </div>
+            {{/if}}
+
+            <div class='twd-field long'>
+                <label>{{loc 'description'}}</label>
+                {{#if system.description}}
+                    <p>{{{system.description}}}</p>
+                {{else}}
+                    <p>-</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if (eq type 'gear')}}
+        <div class='twd-fields'>
+            <div class='twd-field gear-field'>
+                <label>{{loc 'equipment.bonus'}}</label>
+                <span class='twd-field-value'>
+                    {{ifThen system.skill (loc 'skills' system.skill) ''}}
+                    +{{system.bonus}}
+                </span>
+            </div>
+            <div class='twd-field gear-field'>
+                <label>{{loc 'equipment.encumbrance'}}</label>
+                <span class='twd-field-value'>{{ifThen
+                        system.encumbrance
+                        (ifThen (eq system.encumbrance 0.5) '1/2' system.encumbrance)
+                        '-'
+                    }}</span>
+            </div>
+            {{#if system.storage}}
+                <div class='twd-field gear-field'>
+                    <label>{{loc 'equipment.storage'}}</label>
+                    <span class='twd-field-value'>{{system.storage}}</span>
+                </div>
+            {{/if}}
+            <div class='twd-field long'>
+                <label>{{loc 'description'}}</label>
+                {{#if system.description}}
+                    <p>{{{system.description}}}</p>
+                {{else}}
+                    <p>-</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if (eq type 'armor')}}
+        <div class='twd-fields'>
+            <div class='twd-field armor-field'>
+                <label>{{loc 'equipment.armor_penalty'}}</label>
+                <span class='twd-field-value'>{{system.penalty}}</span>
+            </div>
+            <div class='twd-field armor-field'>
+                <label>{{loc 'equipment.armor_level'}}</label>
+                <span class='twd-field-value'>{{system.protection}}</span>
+            </div>
+            <div class='twd-field long'>
+                <label>{{loc 'description'}}</label>
+                {{#if system.description}}
+                    <p>{{{system.description}}}</p>
+                {{else}}
+                    <p>-</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if (eq type 'weapon')}}
+        <div class='twd-fields'>
+            <div class='twd-field weapon-field'>
+                <label>{{loc 'equipment.damage'}}</label>
+                <span class='twd-field-value'>
+                    {{#if system.explosive}}
+                        {{system.bp}}BP
+                    {{else}}
+                        {{system.damage}}
+                    {{/if}}
+                </span>
+            </div>
+            <div class='twd-field weapon-field'>
+                <label>{{loc 'equipment.range'}}</label>
+                <span class='twd-field-value'>
+                    {{#if system.ranged}}
+                        {{loc 'equipment.ranges' system.range}}
+                    {{else}}
+                        {{loc 'equipment.ranges.close'}}
+                    {{/if}}
+                </span>
+            </div>
+            <div class='twd-field weapon-field'>
+                <label>{{loc 'equipment.bonus'}}</label>
+                <span class='twd-field-value'>+{{system.bonus}}</span>
+            </div>
+            <div class='twd-field weapon-field'>
+                <label>{{loc 'equipment.encumbrance'}}</label>
+                <span class='twd-field-value'>{{ifThen
+                        system.encumbrance
+                        (ifThen (eq system.encumbrance 0.5) '1/2' system.encumbrance)
+                        '-'
+                    }}</span>
+            </div>
+            {{#if system.storage}}
+                <div class='twd-field weapon-field'>
+                    <label>{{loc 'equipment.storage'}}</label>
+                    <span class='twd-field-value'>{{system.storage}}</span>
+                </div>
+            {{/if}}
+            <div class='twd-field long'>
+                <label>{{loc 'description'}}</label>
+                {{#if system.description}}
+                    <p>{{{system.description}}}</p>
+                {{else}}
+                    <p>-</p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+</div>

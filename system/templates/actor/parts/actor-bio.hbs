@@ -1,18 +1,18 @@
-<div class='sheet-fields'>
-    <div class='sheet-fields-group'>
-        <div class='sheet-field'>
+<div class='twd-fields'>
+    <div class='twd-fields-group'>
+        <div class='twd-field'>
             <label for='anchor-pc'>{{loc 'character.pc_anchor'}}:</label>
             <input id='anchor-pc' name='system.anchors.pc' value='{{system.anchors.pc}}' />
         </div>
 
-        <div class='sheet-field'>
+        <div class='twd-field'>
             <label for='anchor-npc'>{{loc 'character.npc_anchor'}}:</label>
             <input id='anchor-npc' name='system.anchors.npc' value='{{system.anchors.npc}}' />
         </div>
     </div>
 
-    <div class='sheet-fields-group'>
-        <div class='sheet-field long'>
+    <div class='twd-fields-group'>
+        <div class='twd-field long'>
             <label>{{loc 'issues'}}:</label>
             {{editor
                 content=system.issues
@@ -24,7 +24,7 @@
             }}
         </div>
 
-        <div class='sheet-field long'>
+        <div class='twd-field long'>
             <label>{{loc 'description'}}:</label>
             {{editor
                 content=system.description
@@ -37,7 +37,7 @@
         </div>
     </div>
 
-    <div class='sheet-field long'>
+    <div class='twd-field long'>
         <label>{{loc 'notes'}}:</label>
         {{editor
             content=system.notes

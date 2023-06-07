@@ -1,3 +1,5 @@
+import { localize } from '../../helpers/i18n';
+
 export class TWDBaseItemSheet extends ItemSheet {
     /** @override */
     static get defaultOptions() {
@@ -13,12 +15,11 @@ export class TWDBaseItemSheet extends ItemSheet {
         const path = 'systems/thewalkingdead/templates/item';
         return `${path}/item-${this.item.data.type}-sheet.hbs`;
     }
+
     /** @override */
     getData() {
-        // Retrieve base data structure.
         const context = super.getData();
 
-        // Retrieve the roll data for TinyMCE editors.
         context.rollData = {};
         let actor = this.object?.parent ?? null;
         if (actor) {
@@ -26,6 +27,14 @@ export class TWDBaseItemSheet extends ItemSheet {
         }
 
         context.system = context.item.system;
+        // Skills meant for the dropdowns in the gear sheet.
+        context.skills = CONFIG.THEWALKINGDEAD.skills().reduce(
+            (obj, skill) => {
+                obj[skill] = localize('skills', skill);
+                return obj;
+            },
+            { '': '-' },
+        );
 
         return context;
     }

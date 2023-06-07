@@ -11,6 +11,7 @@ import './styles/thewalkingdead.scss';
 import { TWDBaseDie, TWDStressDie, registerDice3D } from './rolls/dice.js';
 import { handleRollPush } from './rolls/roll.js';
 import { createItemMacro, rollItemMacro } from './macros.js';
+import { THEWALKINGDEAD } from './helpers/config.js';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -31,12 +32,14 @@ Hooks.once('init', async function () {
     // Define custom Document classes
     CONFIG.Actor.documentClass = TWDActor;
     CONFIG.Item.documentClass = TWDItem;
+    CONFIG.THEWALKINGDEAD = THEWALKINGDEAD;
 
     // Register sheet application classes
     Actors.unregisterSheet('core', ActorSheet);
     Actors.registerSheet('thewalkingdead', TWDActorSheet, { makeDefault: true });
     Items.unregisterSheet('core', ItemSheet);
     Items.registerSheet('thewalkingdead', TWDBaseItemSheet, {
+        types: ['armor', 'gear', 'weapon', 'talent'],
         makeDefault: true,
     });
     Items.registerSheet('thewalkingdead', TWDInjuryItemSheet, {

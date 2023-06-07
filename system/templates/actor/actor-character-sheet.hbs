@@ -8,13 +8,13 @@
             height='100'
             width='100'
         />
-        <div class='sheet-fields'>
-            <div class='sheet-field'>
+        <div class='twd-fields'>
+            <div class='twd-field'>
                 <label for='name'>{{loc 'name'}}:</label>
                 <input id='name' name='name' type='text' value='{{actor.name}}' />
             </div>
-            <div class='sheet-fields-group'>
-                <div class='sheet-field'>
+            <div class='twd-fields-group'>
+                <div class='twd-field'>
                     <label for='archetype'>{{loc 'character.archetype'}}:</label>
                     <input
                         id='archetype'
@@ -24,7 +24,7 @@
                     />
                 </div>
 
-                <div class='sheet-field'>
+                <div class='twd-field'>
                     <label for='experience'>{{loc 'character.experience'}}:</label>
                     <div class='char-box-track'>
                         {{#with system.experience as |exp|}}
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class='sheet-field'>
+            <div class='twd-field'>
                 <label for='drive'>{{loc 'character.drive'}}:</label>
                 <input
                     type='text'

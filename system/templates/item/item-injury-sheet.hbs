@@ -6,9 +6,9 @@
         </h1>
     </header>
     <section>
-        <div class='sheet-fields'>
-            <div class='sheet-fields-group'>
-                <div class='sheet-field injury-field'>
+        <div class='twd-fields'>
+            <div class='twd-fields-group'>
+                <div class='twd-field injury-field'>
                     <label>{{loc 'injuries.lethal'}}:</label>
 
                     <select data-dtype='Boolean' name='system.lethal'>
@@ -19,7 +19,7 @@
                     </select>
                 </div>
 
-                <div class='sheet-field injury-field'>
+                <div class='twd-field injury-field'>
                     <label>{{loc 'injuries.penalty'}}:</label>
                     <select data-dtype='Number' name='system.penalty'>
                         <option value='0' {{isSelected (eq system.penalty 0)}}>-</option>
@@ -32,8 +32,8 @@
                 </div>
             </div>
 
-            <div class='sheet-fields-group'>
-                <div class='sheet-field injury-field'>
+            <div class='twd-fields-group'>
+                <div class='twd-field injury-field'>
                     <label>{{loc 'injuries.time_limit'}}:</label>
                     <select name='system.time_limit'>
                         <option value='' {{isSelected (eq system.time_limit '')}}>-</option>
@@ -50,7 +50,7 @@
                     </select>
                 </div>
 
-                <div class='sheet-field injury-field'>
+                <div class='twd-field injury-field'>
                     <label>{{loc 'injuries.recovery_time'}}:</label>
                     <select name='system.recovery_time'>
                         <option value='' {{isSelected (eq system.recovery_time '')}}>-</option>

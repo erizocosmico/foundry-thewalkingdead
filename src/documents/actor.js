@@ -1,4 +1,5 @@
 import { labelFor } from '../helpers/i18n';
+import { rollStatDialog } from '../rolls/roll';
 
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
@@ -43,5 +44,45 @@ export class TWDActor extends Actor {
             value: data.attributes[k].value || 0,
             skills: skills.filter((s) => s.attribute === k),
         }));
+    }
+
+    penalties(stat) {
+        let armorPenalty = 0;
+        if (stat === 'mobility') {
+            armorPenalty = this.items
+                .filter((i) => i.type === 'armor' && i.system.equipped)
+                .reduce((acc, i) => acc + i.system.penalty, 0);
+        }
+
+        return (
+            this.items
+                .filter((i) => i.type === 'injury')
+                .reduce((acc, i) => acc + i.system.penalty, 0) + armorPenalty
+        );
+    }
+
+    async rollSkill(skill, bonus = 0) {
+        const data = this.system;
+        await rollStatDialog({
+            actor: this,
+            pool:
+                data.skills[skill].value +
+                data.attributes[data.skills[skill].attribute].value +
+                bonus,
+            stress: data.stress?.value || 0,
+            penalties: this.penalties(skill),
+            label: game.i18n.localize(labelFor('skills', skill)),
+        });
+    }
+
+    async rollAttribute(attr) {
+        const data = this.system;
+        await rollStatDialog({
+            actor: this,
+            pool: data.attributes[attr].value,
+            stress: data.stress?.value || 0,
+            penalties: this.penalties(attr),
+            label: game.i18n.localize(labelFor('attributes', attr)),
+        });
     }
 }

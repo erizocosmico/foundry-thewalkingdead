@@ -159,6 +159,11 @@ export class TWDActorSheet extends ActorSheet {
             const item = this.actor.items.get(li.data('itemId'));
             item.roll();
         });
+        html.find('.item-show').click((e) => {
+            const li = $(e.currentTarget).parents('.item');
+            const item = this.actor.items.get(li.data('itemId'));
+            item.show();
+        });
 
         if (this.actor.isOwner) {
             html.find('li.item').each((i, li) => {
@@ -167,21 +172,6 @@ export class TWDActorSheet extends ActorSheet {
                 li.addEventListener('dragstart', (e) => this._onDragStart(e), false);
             });
         }
-    }
-
-    penalties(stat) {
-        let armorPenalty = 0;
-        if (stat === 'mobility') {
-            armorPenalty = this.actor.items
-                .filter((i) => i.type === 'armor' && i.system.equipped)
-                .reduce((acc, i) => acc + i.system.penalty, 0);
-        }
-
-        return (
-            this.actor.items
-                .filter((i) => i.type === 'injury')
-                .reduce((acc, i) => acc + i.system.penalty, 0) + armorPenalty
-        );
     }
 
     async _setTrackBoxValue(e) {
@@ -204,27 +194,13 @@ export class TWDActorSheet extends ActorSheet {
     async _rollAttribute(e) {
         e.preventDefault();
         const attr = e.target.dataset.attr;
-        const data = this.actor.system;
-        await rollStatDialog({
-            actor: this.actor,
-            pool: data.attributes[attr].value,
-            stress: data.stress?.value || 0,
-            penalties: this.penalties(attr),
-            label: game.i18n.localize(labelFor('attributes', attr)),
-        });
+        await this.actor.rollAttribute(attr);
     }
 
     async _rollSkill(e) {
         e.preventDefault();
         const skill = e.target.dataset.skill;
-        const data = this.actor.system;
-        await rollStatDialog({
-            actor: this.actor,
-            pool: data.skills[skill].value + data.attributes[data.skills[skill].attribute].value,
-            stress: data.stress?.value || 0,
-            penalties: this.penalties(skill),
-            label: game.i18n.localize(labelFor('skills', skill)),
-        });
+        await this.actor.rollSkill(skill);
     }
 
     async _onItemCreate(event) {
