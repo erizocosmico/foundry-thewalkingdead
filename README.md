@@ -2,20 +2,7 @@
 
 Unofficial Foundry VTT system for The Walking Dead Universe RPG by Free League.
 
-### Status
-
-The system is still under development, this is the roadmap.
-
--   [ ] Character sheet
-    -   [x] Character sheet layout and data
-    -   [x] Roll attributes and skills
-    -   [x] Critical injuries
-    -   [x] Talents
-    -   [x] Bio and other data
-    -   [ ] Gear and weapons
--   [ ] NPC sheet
--   [ ] Heaven sheet
--   [ ] Vehicle sheet
+**This system is not official, an official TWD system will be developed by Free League. It will not receive further updates or new functionality other than what I need to play until the official system is released.**
 
 ### System development
 
