@@ -1,5 +1,8 @@
-<div class='twd-roll roll-stat'>
-    <h3>{{label}}</h3>
+<div class='twd-roll roll-stat {{ifThen item "roll-item" ""}}'>
+    <h3>
+        {{#if item}}<img src='{{item.img}}' alt='{{item.name}}' />{{/if}}
+        <span>{{label}}</span>
+    </h3>
 
     <div class='twd-roll-dice'>
         {{#each results.base as |d|}}
@@ -9,6 +12,10 @@
             <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
         {{/each}}
     </div>
+
+    {{#if item}}
+        <div class='twd-roll-item' data-item='{{item.data}}'></div>
+    {{/if}}
 
     {{#if pushed}}
         <h4>{{loc 'rolls.pushed'}}</h4>
@@ -30,6 +37,12 @@
     {{#if success}}
         <div class='twd-roll-result twd-roll-success'>{{successes}}
             {{localize successLabel}}</div>
+
+        {{#if item}}
+            {{#if item.system.damage}}
+                <div class='twd-roll-damage'>{{loc 'damage'}}: {{item.system.damage}}</div>
+            {{/if}}
+        {{/if}}
     {{/if}}
 
     {{#if messedUp}}

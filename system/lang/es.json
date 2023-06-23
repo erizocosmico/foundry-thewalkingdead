@@ -1,1 +1,123 @@
-{}
+{
+    "THEWALKINGDEAD.name": "Nombre",
+    "THEWALKINGDEAD.add": "Añadir",
+    "THEWALKINGDEAD.cancel": "Cancelar",
+    "THEWALKINGDEAD.edit": "Editar",
+    "THEWALKINGDEAD.delete": "Borrar",
+    "THEWALKINGDEAD.yes": "Sí",
+    "THEWALKINGDEAD.no": "No",
+    "THEWALKINGDEAD.attributes_and_skills": "Atributos y habilidades",
+    "THEWALKINGDEAD.attributes": {
+        "str": "Fuerza",
+        "agi": "Agilidad",
+        "wit": "Mente",
+        "emp": "Empatía"
+    },
+    "THEWALKINGDEAD.damage": "Daño",
+    "THEWALKINGDEAD.health": "Salud",
+    "THEWALKINGDEAD.unharmed": "Ileso",
+    "THEWALKINGDEAD.bruised": "Magullado",
+    "THEWALKINGDEAD.battered": "Herido",
+    "THEWALKINGDEAD.broken": "Derrotado",
+    "THEWALKINGDEAD.skill": "Habilidad",
+    "THEWALKINGDEAD.skills": {
+        "close_combat": "Pelear",
+        "endure": "Resistencia",
+        "force": "Fuerza",
+        "mobility": "Mobilidad",
+        "ranged_combat": "Disparar",
+        "stealth": "Sigilo",
+        "scout": "Explorar",
+        "survival": "Supervivencia",
+        "tech": "Tecnología",
+        "leadership": "Liderazgo",
+        "manipulation": "Manipulación",
+        "medicine": "Medicina"
+    },
+    "THEWALKINGDEAD.character": {
+        "name": "Nombre del personaje",
+        "anchors": "Anclas",
+        "archetype": "Arquetipo",
+        "npc_anchor": "PNJ ancla",
+        "pc_anchor": "PJ ancla",
+        "drive": "Motivación",
+        "stress": "Estrés",
+        "experience": "Experiencia"
+    },
+    "THEWALKINGDEAD.rolls": {
+        "roll": "Tirar",
+        "custom_roll": "Tirada",
+        "fail": "Fallo",
+        "success": "Éxito",
+        "successes": "Éxito",
+        "messed_up": "¡La has fastidiado!",
+        "push": "Forzar tirada",
+        "pushed": "Tirada forzada",
+        "modifier": "Modificador",
+        "passive": "Tirada pasiva",
+        "use_close_combat": "Usar cuerpo a cuerpo"
+    },
+    "THEWALKINGDEAD.issues": "Problemas",
+    "THEWALKINGDEAD.injuries": {
+        "add": "Añadir herida crítica",
+        "injury": "Herida crítica",
+        "edit": "Editar herida crítica",
+        "delete": "Borrar herida crítica",
+        "no_injuries": "No herida críticas.",
+        "lethal": "Letal",
+        "penalty": "Penalizador",
+        "time_limit": "Límite de tiempo",
+        "recovery_time": "Convalecencia"
+    },
+    "THEWALKINGDEAD.units": {
+        "minutes": "minutos",
+        "hours": "horas",
+        "days": "días",
+        "weeks": "semanas",
+        "months": "meses"
+    },
+    "THEWALKINGDEAD.notes": "Notas",
+    "THEWALKINGDEAD.stats": "Estadísticas",
+    "THEWALKINGDEAD.talents": {
+        "tab": "Talentos",
+        "empty": "No hay talentos.",
+        "empty_description": "El talento no tiene descripción.",
+        "prerequisite": "Prerequisito"
+    },
+    "THEWALKINGDEAD.equipment": {
+        "tab": "Equipo",
+        "weapons": "Armas",
+        "weapon": "Arma",
+        "bonus": "Bono",
+        "damage": "Daño",
+        "range": "Alcance",
+        "encumbrance": "Peso",
+        "explosive": "Explosivo",
+        "ranged": "A distancia",
+        "armor": "Armadura",
+        "armors": "Armaduras",
+        "gear": "Equipo",
+        "item": "Objeto",
+        "stored": "Equipo almacenado",
+        "armor_penalty": "Penalizador",
+        "armor_level": "Nivel de armadura",
+        "no_weapons": "Sin armas.",
+        "no_armors": "Sin armaduras.",
+        "no_gear": "Sin equipo.",
+        "storage": "Almacenaje",
+        "bp": "PE",
+        "blast_power": "Poder explosivo",
+        "ranges": {
+            "close": "Cercano",
+            "short": "Corto",
+            "long": "Largo",
+            "extreme": "Extremo"
+        }
+    },
+    "THEWALKINGDEAD.bio": "Biografía",
+    "THEWALKINGDEAD.description": "Descripción",
+    "THEWALKINGDEAD.errors": {
+        "gear_no_skill": "¡Este objeto no tiene una habilidad seleccionada y no puede ser tirado!",
+        "item_no_actor": "¡Este objeto no pertenece a ningún actor!"
+    }
+}

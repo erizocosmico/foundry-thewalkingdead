@@ -30,7 +30,7 @@
                         {{#with system.experience as |exp|}}
                             {{#each (range 1 10) as |n|}}
                                 <div
-                                    class='char-box {{cond (gte exp.current n) "active"}}'
+                                    class='char-box {{ifThen (gte exp.current n) "active" ''}}'
                                     data-value='{{n}}'
                                     data-key='system.experience.current'
                                 ></div>
@@ -47,7 +47,7 @@
                     name='system.drive.value'
                     value='{{system.drive.value}}'
                 />
-                <div class='drive-check char-box {{cond system.drive.used "active"}}'></div>
+                <div class='drive-check char-box {{ifThen system.drive.used "active" ''}}'></div>
             </div>
         </div>
     </header>

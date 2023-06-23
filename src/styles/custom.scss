@@ -1,0 +1,132 @@
+#logo,
+#controls,
+#hotbar,
+#navigation,
+#sidebar-tabs .item[data-tab='cards'] {
+    visibility: hidden !important;
+}
+
+#logo,
+#sidebar-tabs .item[data-tab='cards'] {
+    display: none !important;
+}
+
+#scenes .scene {
+    height: 50px;
+}
+
+#scenes .scene h3 {
+    line-height: 45px;
+}
+
+#sidebar {
+    border: none;
+    height: 100%;
+    padding-left: 50px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
+    min-width: 350px;
+    box-shadow: none;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.8191877092633928) 0%,
+        rgba(0, 0, 0, 0.737955216266194) 80%,
+        rgba(0, 0, 0, 0) 100%
+    ) !important;
+}
+
+#sidebar #sidebar-tabs {
+    justify-content: center;
+}
+
+#sidebar #sidebar-tabs a.collapse {
+    display: none;
+}
+
+#sidebar-tabs {
+    padding-top: 0.5em;
+    border: none;
+    box-shadow: none;
+}
+
+#sidebar-tabs > .item {
+    display: flex;
+    height: 30px;
+    min-width: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#sidebar-tabs > .item.active {
+    border-radius: 50%;
+}
+
+#sidebar-tabs > .item.active i {
+    text-shadow: none;
+}
+
+#players:not(:hover) {
+    opacity: 0.5;
+}
+
+#pause {
+    bottom: calc(50% - 50px);
+}
+
+#twd-dice-tray {
+    flex: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#twd-dice-num {
+    border: 1px solid black;
+    font-size: 1.6em;
+    color: white;
+    font-family: 'Noto Serif';
+    text-align: center;
+    padding: 0.5rem 1rem;
+    height: 2.7rem;
+    outline: none !important;
+    box-shadow: 0 0 6px inset #8d9ea7 !important;
+    transition: all ease-in-out 0.25s;
+}
+
+#twd-dice-num:focus {
+    border-color: #ff6400;
+}
+
+#twd-dice-btn,
+#twd-dice-minus,
+#twd-dice-plus {
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5em;
+    box-shadow: 0 0 6px inset #8d9ea7;
+    transition: all 200ms ease-in-out;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+#twd-dice-btn:hover,
+#twd-dice-minus:hover,
+#twd-dice-plus:hover,
+#twd-dice-num:focus {
+    text-shadow: 0 0 15px #ff7a88 !important;
+    color: #fef0f0;
+    box-shadow: 0 0 10px #ff7a88, 0 0 15px #ff7a88 inset !important;
+    border: 1px solid #ff9393 !important;
+}

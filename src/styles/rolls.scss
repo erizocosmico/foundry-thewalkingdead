@@ -32,7 +32,8 @@
         padding-bottom: 1rem;
     }
 
-    &-result {
+    &-result,
+    &-damage {
         font-family: $font-grunge;
         text-transform: uppercase;
         font-size: 2rem;

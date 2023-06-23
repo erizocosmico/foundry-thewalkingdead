@@ -34,8 +34,8 @@ export function registerHelpers() {
         return game.i18n.localize(`THEWALKINGDEAD.${args.join('.')}`);
     });
 
-    Handlebars.registerHelper('cond', function (cond, result) {
-        return cond ? result : '';
+    Handlebars.registerHelper('ifThen', function (cond, result, other) {
+        return cond ? result : other;
     });
 
     Handlebars.registerHelper('capitalize', function (value) {

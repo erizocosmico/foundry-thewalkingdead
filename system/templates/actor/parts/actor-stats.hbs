@@ -41,7 +41,7 @@
                 {{#with system.stress as |stress|}}
                     {{#each (range 1 5) as |n|}}
                         <div
-                            class='char-box {{cond (gte stress.value n) "active"}}'
+                            class='char-box {{ifThen (gte stress.value n) "active" ""}}'
                             data-value='{{n}}'
                             data-key='system.stress.value'
                         ></div>
@@ -55,7 +55,7 @@
             <li class='char-stat'>
                 <label>3. {{loc 'unharmed'}}</label>
                 <div
-                    class='char-box {{cond (eq 3 system.health.value) "active"}}'
+                    class='char-box {{ifThen (eq 3 system.health.value) "active" ""}}'
                     data-value='3'
                     data-key='system.health.value'
                 ></div>
@@ -63,7 +63,7 @@
             <li class='char-stat'>
                 <label>2. {{loc 'bruised'}}</label>
                 <div
-                    class='char-box {{cond (eq 2 system.health.value) "active"}}'
+                    class='char-box {{ifThen (eq 2 system.health.value) "active" ""}}'
                     data-value='2'
                     data-key='system.health.value'
                 ></div>
@@ -71,7 +71,7 @@
             <li class='char-stat'>
                 <label>1. {{loc 'battered'}}</label>
                 <div
-                    class='char-box {{cond (eq 1 system.health.value) "active"}}'
+                    class='char-box {{ifThen (eq 1 system.health.value) "active" ""}}'
                     data-value='1'
                     data-key='system.health.value'
                 ></div>
@@ -79,7 +79,7 @@
             <li class='char-stat'>
                 <label>0. {{loc 'broken'}}</label>
                 <div
-                    class='char-box {{cond (eq 0 system.health.value) "active"}}'
+                    class='char-box {{ifThen (eq 0 system.health.value) "active" ""}}'
                     data-value='0'
                     data-key='system.health.value'
                 ></div>

@@ -1,4 +1,5 @@
 import { localize } from '../helpers/i18n';
+import { rollWeapon, simpleRoll } from '../rolls/roll';
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -48,10 +49,16 @@ export class TWDItem extends Item {
             case 'gear':
                 return await this._rollGear();
             case 'weapon':
+                return await this._rollWeapon();
             case 'armor':
+                return await this._rollArmor();
             default:
                 return await this.show();
         }
+    }
+
+    async _rollArmor() {
+        await simpleRoll(this.system.protection, this.name, this.prepareChatData());
     }
 
     async _rollGear() {
@@ -59,6 +66,23 @@ export class TWDItem extends Item {
             return ui.notifications.error(localize('errors', 'gear_no_skill'));
         }
 
-        await this.actor.rollSkill(this.system.skill, this.system.bonus);
+        await this.actor.rollSkill(this.system.skill, this.system.bonus, this.prepareChatData());
+    }
+
+    prepareChatData() {
+        return {
+            img: this.img,
+            name: this.name,
+            data: JSON.stringify({
+                img: this.img,
+                name: this.name,
+                system: this.system,
+            }),
+            system: this.system,
+        };
+    }
+
+    async _rollWeapon() {
+        await rollWeapon(this.actor, this.prepareChatData());
     }
 }

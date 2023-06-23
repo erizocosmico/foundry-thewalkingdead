@@ -9,9 +9,10 @@ import { TWDInjuryItemSheet } from './sheets/items/injury.js';
 import { preloadHandlebarsTemplates, registerHelpers } from './helpers/templates.js';
 import './styles/thewalkingdead.scss';
 import { TWDBaseDie, TWDStressDie, registerDice3D } from './rolls/dice.js';
-import { handleRollPush } from './rolls/roll.js';
+import { handleRollPush, simpleRoll } from './rolls/roll.js';
 import { createItemMacro, rollItemMacro } from './macros.js';
 import { THEWALKINGDEAD } from './helpers/config.js';
+import { localize } from './helpers/i18n.js';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -60,3 +61,29 @@ Hooks.once('ready', async function () {
 Hooks.once('diceSoNiceReady', registerDice3D);
 
 Hooks.on('renderChatMessage', handleRollPush);
+
+Hooks.on('renderSidebarTab', (app, html, data) => {
+    const formTpl = `
+<div id="twd-dice-tray">
+  <div id='twd-dice-minus'>-</div>
+  <input type='number' id='twd-dice-num' value='0' />
+  <div id='twd-dice-plus'>+</div>
+  <button id='twd-dice-btn'>${localize('rolls.roll')}</button>
+</div>`;
+    html.find('#chat-form').after($(formTpl));
+    const input = document.getElementById('twd-dice-num');
+
+    html.on('click', '#twd-dice-btn', async function (e) {
+        const num = Number(input.value) || 0;
+        if (num > 0) {
+            await simpleRoll(num);
+        }
+    });
+
+    const incrValue = (incr) => {
+        input.value = (Number(input.value) || 0) + incr;
+    };
+
+    html.on('click', '#twd-dice-plus', () => incrValue(1));
+    html.on('click', '#twd-dice-minus', () => incrValue(-1));
+});

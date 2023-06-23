@@ -13,6 +13,7 @@
         "wit": "Wits",
         "emp": "Empathy"
     },
+    "THEWALKINGDEAD.damage": "Damage",
     "THEWALKINGDEAD.health": "Health",
     "THEWALKINGDEAD.unharmed": "Unharmed",
     "THEWALKINGDEAD.bruised": "Bruised",
@@ -45,6 +46,7 @@
     },
     "THEWALKINGDEAD.rolls": {
         "roll": "Roll",
+        "custom_roll": "Roll",
         "fail": "Fail",
         "success": "Success",
         "successes": "Successes",
@@ -52,7 +54,8 @@
         "push": "Push roll",
         "pushed": "Roll pushed",
         "modifier": "Modifier",
-        "passive": "Passive roll"
+        "passive": "Passive roll",
+        "use_close_combat": "Use in close combat"
     },
     "THEWALKINGDEAD.issues": "Issues",
     "THEWALKINGDEAD.injuries": {

@@ -61,17 +61,22 @@ export class TWDActor extends Actor {
         );
     }
 
-    async rollSkill(skill, bonus = 0) {
+    pool(skill) {
+        return (
+            this.system.skills[skill].value +
+            this.system.attributes[this.system.skills[skill].attribute].value
+        );
+    }
+
+    async rollSkill(skill, bonus = 0, item = undefined) {
         const data = this.system;
         await rollStatDialog({
             actor: this,
-            pool:
-                data.skills[skill].value +
-                data.attributes[data.skills[skill].attribute].value +
-                bonus,
+            pool: this.pool(skill) + bonus,
             stress: data.stress?.value || 0,
             penalties: this.penalties(skill),
-            label: game.i18n.localize(labelFor('skills', skill)),
+            label: item ? item.name : game.i18n.localize(labelFor('skills', skill)),
+            item,
         });
     }
 
