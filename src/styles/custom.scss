@@ -1,16 +1,3 @@
-#logo,
-#controls,
-#hotbar,
-#navigation,
-#sidebar-tabs .item[data-tab='cards'] {
-    visibility: hidden !important;
-}
-
-#logo,
-#sidebar-tabs .item[data-tab='cards'] {
-    display: none !important;
-}
-
 #scenes .scene {
     height: 50px;
 }
