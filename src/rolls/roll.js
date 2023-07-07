@@ -151,7 +151,7 @@ export async function rollStat({
 
 async function rerollStat(message, previousRoll, label, item = undefined) {
     const pool = misses(previousRoll, TWDBaseDie);
-    const stress = misses(previousRoll, TWDStressDie);
+    const stress = misses(previousRoll, TWDStressDie) + 1;
 
     const roll = await new Roll(`${pool}dw + ${stress}ds`, {}).evaluate();
     const numSuccesses = successes(roll) + successes(previousRoll);
