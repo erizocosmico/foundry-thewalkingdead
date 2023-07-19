@@ -1,0 +1,123 @@
+{
+    "THEWALKINGDEAD.name": "Nome",
+    "THEWALKINGDEAD.add": "Adicionar",
+    "THEWALKINGDEAD.cancel": "Cancelar",
+    "THEWALKINGDEAD.edit": "Editar",
+    "THEWALKINGDEAD.delete": "Apagar",
+    "THEWALKINGDEAD.yes": "Sim",
+    "THEWALKINGDEAD.no": "Não",
+    "THEWALKINGDEAD.attributes_and_skills": "Atributos & Perícias",
+    "THEWALKINGDEAD.attributes": {
+        "str": "Força",
+        "agi": "Agilidade",
+        "wit": "Astúcia",
+        "emp": "Empatia"
+    },
+    "THEWALKINGDEAD.damage": "Dano",
+    "THEWALKINGDEAD.health": "Vitalidade",
+    "THEWALKINGDEAD.unharmed": "Ileso",
+    "THEWALKINGDEAD.bruised": "Escoriado",
+    "THEWALKINGDEAD.battered": "Ferido",
+    "THEWALKINGDEAD.broken": "Acabado",
+    "THEWALKINGDEAD.skill": "Perícia",
+    "THEWALKINGDEAD.skills": {
+        "close_combat": "Luta",
+        "endure": "Suportar",
+        "force": "Potência",
+        "mobility": "Mobilidade",
+        "ranged_combat": "Pontaria",
+        "stealth": "Furtividade",
+        "scout": "Patrulha",
+        "survival": "Sobrevivência",
+        "tech": "Tecnologia",
+        "leadership": "Liderança",
+        "manipulation": "Manipulação",
+        "medicine": "Medicina"
+    },
+    "THEWALKINGDEAD.character": {
+        "name": "Nome do personagem",
+        "anchors": "Âncoras",
+        "archetype": "Arquétipo",
+        "npc_anchor": "Âncora PNJ",
+        "pc_anchor": "Âncora PJ",
+        "drive": "Motivação",
+        "stress": "Estresse",
+        "experience": "Experiência"
+    },
+    "THEWALKINGDEAD.rolls": {
+        "roll": "Rolar",
+        "custom_roll": "Rolar",
+        "fail": "Falha",
+        "success": "Sucesso",
+        "successes": "Sucessos",
+        "messed_up": "Você cometeu um deslize!",
+        "push": "Forçar a rolagem",
+        "pushed": "Rolagem forçada",
+        "modifier": "Modificador",
+        "passive": "Rolagem passiva",
+        "use_close_combat": "Usar em Luta"
+    },
+    "THEWALKINGDEAD.issues": "Problemas",
+    "THEWALKINGDEAD.injuries": {
+        "add": "Adicionar lesão crítica",
+        "injury": "Lesão crítica",
+        "edit": "Editar lesão crítica",
+        "delete": "Excluir lesão crítica",
+        "no_injuries": "Sem lesões críticas.",
+        "lethal": "Letal",
+        "penalty": "Penalidade",
+        "time_limit": "Limite de tempo",
+        "recovery_time": "Tempo de recuperação"
+    },
+    "THEWALKINGDEAD.units": {
+        "minutes": "minutos",
+        "hours": "horas",
+        "days": "dias",
+        "weeks": "semanas",
+        "months": "meses"
+    },
+    "THEWALKINGDEAD.notes": "Notas",
+    "THEWALKINGDEAD.stats": "Estatísticas",
+    "THEWALKINGDEAD.talents": {
+        "tab": "Talentos",
+        "empty": "Sem talentos.",
+        "empty_description": "Talento sem descrição.",
+        "prerequisite": "Pré-requisito"
+    },
+    "THEWALKINGDEAD.equipment": {
+        "tab": "Equipamento",
+        "weapons": "Armas",
+        "weapon": "Arma",
+        "bonus": "Bônus",
+        "damage": "Dano",
+        "range": "Alcance",
+        "encumbrance": "Carga",
+        "explosive": "Explosivo",
+        "ranged": "À Distância",
+        "armor": "Armadura",
+        "armors": "Armaduras",
+        "gear": "Equipamentos",
+        "item": "Item",
+        "stored": "Equipamento armazenado",
+        "armor_penalty": "Penalidade",
+        "armor_level": "Nível de Armadura",
+        "no_weapons": "Sem armas.",
+        "no_armors": "Sem armaduras.",
+        "no_gear": "Sem equipamento.",
+        "storage": "Armazenado",
+        "bp": "BP",
+        "blast_power": "Poder de explosão",
+        "ranges": {
+            "close": "Perto",
+            "short": "Curto",
+            "long": "Longo",
+            "extreme": "Extremo"
+        }
+    },
+    "THEWALKINGDEAD.bio": "Biografia",
+    "THEWALKINGDEAD.description": "Descrição",
+    "THEWALKINGDEAD.errors": {
+        "gear_no_skill": "Este equipamento não tem nenhuma perícia relacionada e não pode ser rolado!",
+        "item_no_actor": "Este item não pertence a nenhum personagem!"
+    }
+}
