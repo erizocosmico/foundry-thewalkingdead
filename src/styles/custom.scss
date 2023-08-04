@@ -55,6 +55,14 @@
     text-shadow: none;
 }
 
+#sidebar-tabs .item[data-tab='cards'] {
+    visibility: hidden !important;
+}
+
+#sidebar-tabs .item[data-tab='cards'] {
+    display: none !important;
+}
+
 #players:not(:hover) {
     opacity: 0.5;
 }
