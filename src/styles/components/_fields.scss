@@ -50,12 +50,13 @@
     label {
         font-weight: 500;
         font-size: 0.8rem;
+        white-space: nowrap;
     }
 
     &-value {
         line-height: 1.6rem;
         font-family: $font-handwrite;
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     input,
@@ -64,11 +65,15 @@
         border: none;
         background-color: transparent;
         font-family: $font-handwrite;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
 
         &:focus {
             box-shadow: none;
         }
+    }
+
+    .editor-content p {
+        font-size: 1.2rem;
     }
 
     p {

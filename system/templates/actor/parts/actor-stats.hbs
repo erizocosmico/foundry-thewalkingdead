@@ -39,7 +39,7 @@
             <label for='stress'>{{loc 'character.stress'}}</label>
             <div class='char-box-track'>
                 {{#with system.stress as |stress|}}
-                    {{#each (range 1 5) as |n|}}
+                    {{#each (range 1 20) as |n|}}
                         <div
                             class='char-box {{ifThen (gte stress.value n) "active" ""}}'
                             data-value='{{n}}'

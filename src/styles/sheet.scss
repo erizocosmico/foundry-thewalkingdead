@@ -65,7 +65,6 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border-left: 1px solid $c-border;
 }
 
 .sheet-health-header {
@@ -167,12 +166,12 @@
         content: 'x';
         font-family: $font-handwrite;
         position: absolute;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 20px;
         text-transform: lowercase;
         width: 25px;
         top: -1px;
-        left: 3px;
+        left: 1px;
     }
 }
 
