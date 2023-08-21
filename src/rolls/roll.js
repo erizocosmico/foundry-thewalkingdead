@@ -121,7 +121,8 @@ export async function rollStat({
         success: numSuccesses > 0,
         messedUp,
         fail: numSuccesses === 0,
-        canPush: actor.type === 'character' && numSuccesses < pool + stress && !passive,
+        canPush:
+            actor.type === 'character' && !messedUp && numSuccesses < pool + stress && !passive,
         item,
     };
 
@@ -160,7 +161,7 @@ async function rerollStat(message, previousRoll, label, item = undefined) {
     const rollData = {
         label,
         results: resultsFromRoll(previousRoll),
-        pushResults: resultsFromRoll(roll),
+        pushResults: resultsFromRoll(roll, previousRoll),
         successes: numSuccesses,
         successLabel:
             numSuccesses === 1 ? labelFor('rolls', 'success') : labelFor('rolls', 'successes'),
@@ -243,8 +244,18 @@ function walkers(roll) {
     return walkers;
 }
 
-function resultsFromRoll(roll) {
+function resultsFromRoll(roll, previousRoll = { terms: [] }) {
     const results = { base: [], stress: [] };
+
+    for (let term of previousRoll.terms) {
+        if (term instanceof TWDBaseDie) {
+            results.base.push(...term.results.map((r) => r.result).filter((r) => r === 6));
+        }
+        if (term instanceof TWDStressDie) {
+            results.stress.push(...term.results.map((r) => r.result).filter((r) => r === 6));
+        }
+    }
+
     for (let term of roll.terms) {
         if (term instanceof TWDBaseDie) {
             results.base.push(...term.results.map((r) => r.result));
@@ -253,6 +264,7 @@ function resultsFromRoll(roll) {
             results.stress.push(...term.results.map((r) => r.result));
         }
     }
+
     return results;
 }
 

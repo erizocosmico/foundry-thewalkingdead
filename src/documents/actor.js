@@ -6,6 +6,20 @@ import { rollStatDialog } from '../rolls/roll';
  * @extends {Actor}
  */
 export class TWDActor extends Actor {
+    static async create(data, options = {}) {
+        data.prototypeToken = data.prototypeToken || {};
+        let defaults = {};
+        if (data.type === 'character') {
+            defaults = {
+                actorLink: true,
+                disposition: 1,
+                vision: true,
+            };
+        }
+        mergeObject(data.prototypeToken, defaults, { overwrite: false });
+        return super.create(data, options);
+    }
+
     /** @override */
     _preCreate() {
         this.updateSource({ img: `systems/thewalkingdead/assets/actors/${this.type}.jpg` });
@@ -26,6 +40,10 @@ export class TWDActor extends Actor {
         const flags = actorData.flags.thewalkingdead || {};
 
         this._prepareStats(actorData);
+    }
+
+    async createDocuments(data, context) {
+        super.createDocuments(data, context);
     }
 
     _prepareStats(actorData) {

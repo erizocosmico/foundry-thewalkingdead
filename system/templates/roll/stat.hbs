@@ -4,19 +4,6 @@
         <span>{{label}}</span>
     </h3>
 
-    <div class='twd-roll-dice'>
-        {{#each results.base as |d|}}
-            <span class='twd-dice twd-dice-base twd-dice-base-{{d}}'></span>
-        {{/each}}
-        {{#each results.stress as |d|}}
-            <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
-        {{/each}}
-    </div>
-
-    {{#if item}}
-        <div class='twd-roll-item' data-item='{{item.data}}'></div>
-    {{/if}}
-
     {{#if pushed}}
         <h4>{{loc 'rolls.pushed'}}</h4>
 
@@ -28,6 +15,19 @@
                 <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
             {{/each}}
         </div>
+    {{else}}
+        <div class='twd-roll-dice'>
+            {{#each results.base as |d|}}
+                <span class='twd-dice twd-dice-base twd-dice-base-{{d}}'></span>
+            {{/each}}
+            {{#each results.stress as |d|}}
+                <span class='twd-dice twd-dice-stress twd-dice-stress-{{d}}'></span>
+            {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if item}}
+        <div class='twd-roll-item' data-item='{{item.data}}'></div>
     {{/if}}
 
     {{#if fail}}
