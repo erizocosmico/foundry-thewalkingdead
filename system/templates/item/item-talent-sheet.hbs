@@ -17,6 +17,25 @@
                 />
             </div>
 
+            <div class='twd-field gear-field'>
+                <label>{{loc 'skill'}}</label>
+                <select name='system.skill'>
+                    {{selectOptions skills selected=system.skill}}
+                </select>
+            </div>
+
+            <div class='twd-field gear-field'>
+                <label>{{loc 'equipment.bonus'}}</label>
+                <select data-dtype='Number' name='system.bonus'>
+                    <option value='0' {{isSelected (eq system.bonus 0)}}>-</option>
+                    <option value='1' {{isSelected (eq system.bonus 1)}}>1</option>
+                    <option value='2' {{isSelected (eq system.bonus 2)}}>2</option>
+                    <option value='3' {{isSelected (eq system.bonus 3)}}>3</option>
+                    <option value='4' {{isSelected (eq system.bonus 4)}}>4</option>
+                    <option value='5' {{isSelected (eq system.bonus 5)}}>5</option>
+                </select>
+            </div>
+
             <div class='twd-field long'>
                 <label>{{loc 'description'}}:</label>
                 {{editor

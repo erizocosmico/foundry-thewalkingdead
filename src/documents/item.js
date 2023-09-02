@@ -52,6 +52,8 @@ export class TWDItem extends Item {
                 return await this._rollWeapon();
             case 'armor':
                 return await this._rollArmor();
+            case 'talent':
+                return await this._rollTalent();
             default:
                 return await this.show();
         }
@@ -64,6 +66,14 @@ export class TWDItem extends Item {
     async _rollGear() {
         if (!this.system.skill) {
             return ui.notifications.error(localize('errors', 'gear_no_skill'));
+        }
+
+        await this.actor.rollSkill(this.system.skill, this.system.bonus, this.prepareChatData());
+    }
+
+    async _rollTalent() {
+        if (!this.system.skill) {
+            return await this.show();
         }
 
         await this.actor.rollSkill(this.system.skill, this.system.bonus, this.prepareChatData());

@@ -187,7 +187,9 @@
         "talent": {
             "templates": ["base"],
             "prerequisite": "",
-            "expanded": false
+            "expanded": false,
+            "skill": "",
+            "bonus": 0
         },
         "armor": {
             "templates": ["base"],
